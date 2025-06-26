@@ -1,98 +1,110 @@
 {
-    "background_agents": {
-        "enabled": true,
-        "auto_start": true,
-        "restart_on_failure": true,
-        "max_retries": 3
+  "version": "2.0",
+  "lastUpdate": "2025-06-26T11:25:42.421Z",
+  "monitoring": {
+    "enabled": true,
+    "interval": 30000,
+    "autoRestart": true
+  },
+  "agents": {
+    "management": {
+      "ceo": {
+        "name": "CEO",
+        "emoji": "👑",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.419Z"
+      },
+      "cfo": {
+        "name": "CFO",
+        "emoji": "💰",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.419Z"
+      },
+      "cto": {
+        "name": "CTO",
+        "emoji": "💻",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.419Z"
+      },
+      "cmo": {
+        "name": "CMO",
+        "emoji": "📣",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.419Z"
+      }
     },
-    "agent_schedules": {
-        "smart_database": {
-            "sync_interval": 3600,
-            "backup_interval": 86400,
-            "cleanup_interval": 604800
-        },
-        "cfo_agent": {
-            "cost_check_interval": 300,
-            "report_interval": 86400,
-            "alert_check_interval": 60
-        },
-        "cto_agent": {
-            "health_check_interval": 60,
-            "performance_check_interval": 300,
-            "log_rotation_interval": 86400
-        },
-        "data_analyst": {
-            "metrics_collection_interval": 300,
-            "report_generation_interval": 86400,
-            "trend_analysis_interval": 3600
-        },
-        "quality_assurance": {
-            "quality_check_interval": 1800,
-            "audit_interval": 86400,
-            "validation_interval": 300
-        }
+    "support": {
+      "dataAnalyst": {
+        "name": "Data Analyst",
+        "emoji": "📊",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.419Z"
+      },
+      "customerSuccess": {
+        "name": "Customer Success",
+        "emoji": "🤝",
+        "status": "error"
+      },
+      "qualityAssurance": {
+        "name": "Quality Assurance",
+        "emoji": "✅",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.420Z"
+      }
     },
-    "background_tasks": [
-        {
-            "name": "database_sync",
-            "agent": "smart_database",
-            "schedule": "*/30 * * * *",
-            "priority": "high",
-            "enabled": true
-        },
-        {
-            "name": "cost_monitoring",
-            "agent": "cfo_agent",
-            "schedule": "*/5 * * * *",
-            "priority": "critical",
-            "enabled": true
-        },
-        {
-            "name": "health_monitoring",
-            "agent": "cto_agent",
-            "schedule": "* * * * *",
-            "priority": "critical",
-            "enabled": true
-        },
-        {
-            "name": "data_collection",
-            "agent": "data_analyst",
-            "schedule": "*/15 * * * *",
-            "priority": "medium",
-            "enabled": true
-        },
-        {
-            "name": "quality_validation",
-            "agent": "quality_assurance",
-            "schedule": "*/30 * * * *",
-            "priority": "medium",
-            "enabled": true
-        },
-        {
-            "name": "candidate_enrichment",
-            "agent": "profile_analyzer",
-            "schedule": "0 */2 * * *",
-            "priority": "low",
-            "enabled": true
-        },
-        {
-            "name": "message_optimization",
-            "agent": "cmo_agent",
-            "schedule": "0 3 * * *",
-            "priority": "low",
-            "enabled": true
-        }
-    ],
-    "resource_limits": {
-        "max_concurrent_tasks": 5,
-        "max_memory_per_agent": "512MB",
-        "max_cpu_per_agent": "25%",
-        "task_timeout": 300000
-    },
-    "monitoring": {
-        "log_level": "info",
-        "metrics_enabled": true,
-        "alerts_enabled": true,
-        "dashboard_update_interval": 5000
+    "stores": {
+      "autoRecruiter": {
+        "name": "Auto Recruiter",
+        "emoji": "⚡",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.420Z"
+      },
+      "cultureMatcher": {
+        "name": "Culture Matcher",
+        "emoji": "🎯",
+        "status": "error"
+      },
+      "idealProfiler": {
+        "name": "Ideal Profiler",
+        "emoji": "🏗️",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.420Z"
+      },
+      "messageCreafter": {
+        "name": "Message Crafter",
+        "emoji": "📝",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.420Z"
+      },
+      "profileAnalyzer": {
+        "name": "Profile Analyzer",
+        "emoji": "🔬",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.420Z"
+      },
+      "talentSourcer": {
+        "name": "Talent Sourcer",
+        "emoji": "🕵️",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.420Z"
+      },
+      "dictionaryBot": {
+        "name": "Dictionary Bot",
+        "emoji": "🔤",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.420Z"
+      },
+      "smartDatabase": {
+        "name": "Smart Database",
+        "emoji": "💾",
+        "status": "active",
+        "lastCheck": "2025-06-26T11:25:42.420Z"
+      }
     }
+  },
+  "terminalFix": {
+    "enabled": true,
+    "autoFix": true,
+    "script": "terminal-connection-fix.js"
+  }
 }
