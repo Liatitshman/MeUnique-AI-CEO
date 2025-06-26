@@ -1,0 +1,46 @@
+{
+  "scrape_date": "2025-06-26_15-28-51",
+  "source": "LinkedIn Network",
+  "total_candidates": 3,
+  "candidates": [
+    {
+      "name": "David Cohen",
+      "title": "Senior Full Stack Developer",
+      "company": "Wix",
+      "location": "Tel Aviv",
+      "skills": [
+        "React",
+        "Node.js",
+        "MongoDB"
+      ],
+      "match_score": 0.92,
+      "profile_url": "https://linkedin.com/in/david-cohen-example"
+    },
+    {
+      "name": "Sarah Levy",
+      "title": "Product Manager",
+      "company": "Monday.com",
+      "location": "Tel Aviv",
+      "skills": [
+        "Product Strategy",
+        "Agile",
+        "Data Analysis"
+      ],
+      "match_score": 0.88,
+      "profile_url": "https://linkedin.com/in/sarah-levy-example"
+    },
+    {
+      "name": "Michael Goldstein",
+      "title": "DevOps Engineer",
+      "company": "Taboola",
+      "location": "Tel Aviv",
+      "skills": [
+        "AWS",
+        "Kubernetes",
+        "CI/CD"
+      ],
+      "match_score": 0.85,
+      "profile_url": "https://linkedin.com/in/michael-goldstein-example"
+    }
+  ]
+}
