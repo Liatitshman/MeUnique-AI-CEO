@@ -11,33 +11,44 @@ import {
     Clock, DollarSign, TrendingUp, Award, Briefcase, Code,
     Palette, FileText, UserCheck, Bot, Cpu, Layers
 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
-// Soft pastel color palette
-const softPalette = {
+// Vibrant engaging color palette
+const vibrantPalette = {
     primary: {
-        light: '#E8E5FF',    // Lavender
-        main: '#C7BFFF',
-        dark: '#A394FF'
+        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        light: '#E8E5FF',
+        main: '#667eea',
+        dark: '#5a67d8',
+        glow: '0 0 30px rgba(102, 126, 234, 0.5)'
     },
     secondary: {
-        light: '#FFE5F1',    // Pink
-        main: '#FFC7E3',
-        dark: '#FF94C9'
+        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        light: '#fce4ec',
+        main: '#f5576c',
+        dark: '#e91e63',
+        glow: '0 0 30px rgba(245, 87, 108, 0.5)'
     },
     accent: {
-        light: '#E5FFF5',    // Mint
-        main: '#B8FFE1',
-        dark: '#7AFFCD'
+        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        light: '#e0f7fa',
+        main: '#00f2fe',
+        dark: '#0097a7',
+        glow: '0 0 30px rgba(0, 242, 254, 0.5)'
     },
     warm: {
-        light: '#FFF5E5',    // Peach
-        main: '#FFDAB8',
-        dark: '#FFB87A'
+        gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+        light: '#fff3cd',
+        main: '#fee140',
+        dark: '#fa709a',
+        glow: '0 0 30px rgba(254, 225, 64, 0.5)'
     },
     cool: {
-        light: '#E5F5FF',    // Sky
-        main: '#B8DAFF',
-        dark: '#7AB8FF'
+        gradient: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+        light: '#d4f8e8',
+        main: '#38ef7d',
+        dark: '#11998e',
+        glow: '0 0 30px rgba(56, 239, 125, 0.5)'
     },
     neutral: {
         light: '#F8F9FA',
@@ -217,7 +228,7 @@ const InteractiveStore = ({ store, onAddToCart, onViewDetails }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [showCapabilities, setShowCapabilities] = useState(false);
-    const colors = softPalette[store.color];
+    const colors = vibrantPalette[store.color];
 
     return (
         <motion.div
@@ -226,10 +237,11 @@ const InteractiveStore = ({ store, onAddToCart, onViewDetails }) => {
             whileHover={{ y: -5 }}
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
-            className="relative overflow-hidden rounded-3xl shadow-lg cursor-pointer"
+            className="relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer transform transition-all duration-300"
             style={{
-                background: `linear-gradient(135deg, ${colors.light} 0%, ${colors.main} 100%)`,
-                border: `2px solid ${colors.main}`
+                background: colors.gradient || `linear-gradient(135deg, ${colors.light} 0%, ${colors.main} 100%)`,
+                border: `2px solid ${colors.main}`,
+                boxShadow: isHovered ? colors.glow : 'none'
             }}
             onClick={() => onViewDetails(store)}
         >
@@ -353,7 +365,7 @@ const InteractiveStore = ({ store, onAddToCart, onViewDetails }) => {
 // Store Modal with Products
 const StoreModal = ({ store, isOpen, onClose, onAddToCart }) => {
     const [selectedProduct, setSelectedProduct] = useState(null);
-    const colors = softPalette[store?.color || 'primary'];
+    const colors = vibrantPalette[store?.color || 'primary'];
 
     if (!store || !isOpen) return null;
 
@@ -498,6 +510,7 @@ export default function DigitalMall() {
     const [selectedStore, setSelectedStore] = useState(null);
     const [showCart, setShowCart] = useState(false);
     const [notifications, setNotifications] = useState([]);
+    const router = useRouter();
 
     // Real-time notifications
     const addNotification = (message, type = 'success') => {
@@ -526,8 +539,17 @@ export default function DigitalMall() {
     // Categories
     const categories = ['all', ...new Set(stores.map(s => s.category))];
 
+    const handleViewStore = (store) => {
+        // Open store in new tab with unique URL
+        const storeUrl = `/store/${store.id}`;
+        window.open(storeUrl, '_blank');
+
+        // Add notification
+        addNotification(`Opening ${store.name} in new tab!`, 'info');
+    };
+
     return (
-        <div className="min-h-screen" style={{ backgroundColor: softPalette.neutral.light }}>
+        <div className="min-h-screen" style={{ backgroundColor: vibrantPalette.neutral.light }}>
             {/* Header */}
             <header className="bg-white shadow-sm sticky top-0 z-40">
                 <div className="container mx-auto px-4 py-4">
@@ -537,7 +559,7 @@ export default function DigitalMall() {
                                 animate={{ rotate: [0, 360] }}
                                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
                                 className="w-12 h-12 rounded-xl flex items-center justify-center"
-                                style={{ backgroundColor: softPalette.primary.main }}
+                                style={{ background: vibrantPalette.primary.gradient }}
                             >
                                 <Crown className="w-6 h-6 text-white" />
                             </motion.div>
@@ -553,19 +575,31 @@ export default function DigitalMall() {
                             whileTap={{ scale: 0.95 }}
                             onClick={() => setShowCart(!showCart)}
                             className="relative p-3 rounded-xl"
-                            style={{ backgroundColor: softPalette.accent.light }}
+                            style={{ backgroundColor: vibrantPalette.accent.light }}
                         >
-                            <ShoppingCart className="w-6 h-6" style={{ color: softPalette.accent.dark }} />
-                            {cart.length > 0 && (
-                                <motion.span
-                                    initial={{ scale: 0 }}
-                                    animate={{ scale: 1 }}
-                                    className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-xs text-white"
-                                    style={{ backgroundColor: softPalette.secondary.dark }}
-                                >
-                                    {cart.length}
-                                </motion.span>
-                            )}
+                            <ShoppingCart className="w-6 h-6" style={{ color: vibrantPalette.accent.dark }} />
+                            <AnimatePresence>
+                                {cart.length > 0 && (
+                                    <motion.span
+                                        initial={{ scale: 0 }}
+                                        animate={{ scale: 1 }}
+                                        exit={{ scale: 0 }}
+                                        className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                                        style={{ backgroundColor: vibrantPalette.secondary.dark }}
+                                    >
+                                        {cart.length}
+                                    </motion.span>
+                                )}
+                            </AnimatePresence>
+                        </motion.button>
+
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => window.open('/admin', '_blank')}
+                            className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium"
+                        >
+                            Admin Mode
                         </motion.button>
                     </div>
                 </div>
@@ -584,7 +618,7 @@ export default function DigitalMall() {
                             onChange={(e) => setSearchQuery(e.target.value)}
                             className="w-full pl-10 pr-4 py-3 rounded-xl border-2 focus:outline-none transition-colors"
                             style={{
-                                borderColor: softPalette.primary.light,
+                                borderColor: vibrantPalette.primary.light,
                                 backgroundColor: 'white'
                             }}
                         />
@@ -595,7 +629,7 @@ export default function DigitalMall() {
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
                         className="px-4 py-3 rounded-xl border-2 focus:outline-none"
-                        style={{ borderColor: softPalette.secondary.light }}
+                        style={{ borderColor: vibrantPalette.secondary.light }}
                     >
                         {categories.map(cat => (
                             <option key={cat} value={cat}>
@@ -609,7 +643,7 @@ export default function DigitalMall() {
                         value={selectedFloor}
                         onChange={(e) => setSelectedFloor(e.target.value)}
                         className="px-4 py-3 rounded-xl border-2 focus:outline-none"
-                        style={{ borderColor: softPalette.accent.light }}
+                        style={{ borderColor: vibrantPalette.accent.light }}
                     >
                         <option value="all">All Floors</option>
                         <option value="1">Floor 1</option>
@@ -625,12 +659,12 @@ export default function DigitalMall() {
                     layout
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
-                    {filteredStores.map((store) => (
+                    {filteredStores.map((store, index) => (
                         <InteractiveStore
                             key={store.id}
                             store={store}
                             onAddToCart={addToCart}
-                            onViewDetails={setSelectedStore}
+                            onViewDetails={handleViewStore}
                         />
                     ))}
                 </motion.div>
@@ -675,7 +709,7 @@ export default function DigitalMall() {
                                             initial={{ opacity: 0, y: 20 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             className="p-4 rounded-xl"
-                                            style={{ backgroundColor: softPalette.neutral.light }}
+                                            style={{ backgroundColor: vibrantPalette.neutral.light }}
                                         >
                                             <div className="flex justify-between items-start">
                                                 <div>
@@ -705,8 +739,8 @@ export default function DigitalMall() {
                             className="px-4 py-3 rounded-lg shadow-lg text-white"
                             style={{
                                 backgroundColor: notification.type === 'success'
-                                    ? softPalette.accent.dark
-                                    : softPalette.secondary.dark
+                                    ? vibrantPalette.accent.dark
+                                    : vibrantPalette.secondary.dark
                             }}
                         >
                             {notification.message}
