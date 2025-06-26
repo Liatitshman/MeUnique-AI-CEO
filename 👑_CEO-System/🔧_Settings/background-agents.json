@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdate": "2025-06-26T11:25:42.421Z",
+  "lastUpdate": "2025-06-26T12:05:42.462Z",
   "monitoring": {
     "enabled": true,
     "interval": 30000,
@@ -12,25 +12,25 @@
         "name": "CEO",
         "emoji": "👑",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.419Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "cfo": {
         "name": "CFO",
         "emoji": "💰",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.419Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "cto": {
         "name": "CTO",
         "emoji": "💻",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.419Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "cmo": {
         "name": "CMO",
         "emoji": "📣",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.419Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       }
     },
     "support": {
@@ -38,18 +38,19 @@
         "name": "Data Analyst",
         "emoji": "📊",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.419Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "customerSuccess": {
         "name": "Customer Success",
         "emoji": "🤝",
-        "status": "error"
+        "status": "active",
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "qualityAssurance": {
         "name": "Quality Assurance",
         "emoji": "✅",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.420Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       }
     },
     "stores": {
@@ -57,48 +58,49 @@
         "name": "Auto Recruiter",
         "emoji": "⚡",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.420Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "cultureMatcher": {
         "name": "Culture Matcher",
         "emoji": "🎯",
-        "status": "error"
+        "status": "active",
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "idealProfiler": {
         "name": "Ideal Profiler",
         "emoji": "🏗️",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.420Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "messageCreafter": {
         "name": "Message Crafter",
         "emoji": "📝",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.420Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "profileAnalyzer": {
         "name": "Profile Analyzer",
         "emoji": "🔬",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.420Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "talentSourcer": {
         "name": "Talent Sourcer",
         "emoji": "🕵️",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.420Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "dictionaryBot": {
         "name": "Dictionary Bot",
         "emoji": "🔤",
         "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.420Z"
+        "lastCheck": "2025-06-26T12:05:42.459Z"
       },
       "smartDatabase": {
         "name": "Smart Database",
         "emoji": "💾",
-        "status": "active",
-        "lastCheck": "2025-06-26T11:25:42.420Z"
+        "status": "error",
+        "lastCheck": "2025-06-26T12:05:12.466Z"
       }
     }
   },
