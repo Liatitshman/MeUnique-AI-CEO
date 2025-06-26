@@ -1,0 +1,197 @@
+{
+    "name": "Dictionary Bot",
+    "emoji": "🔤",
+    "version": "1.0.0",
+    "description": "NEW! Translates technical jargon and creates personalized explanations",
+    "priority": 4.5,
+    "type": "store",
+    "role": "translation_specialist",
+    "isNew": true,
+    "capabilities": [
+        "jargon_translation",
+        "technical_simplification",
+        "cultural_translation",
+        "context_awareness",
+        "multi_level_explanation",
+        "industry_specific_terms"
+    ],
+    "translationEngine": {
+        "domains": {
+            "technical": {
+                "programming": [
+                    "frontend",
+                    "backend",
+                    "devops",
+                    "data",
+                    "mobile"
+                ],
+                "frameworks": [
+                    "react",
+                    "angular",
+                    "vue",
+                    "django",
+                    "rails",
+                    "spring"
+                ],
+                "concepts": [
+                    "microservices",
+                    "ci_cd",
+                    "agile",
+                    "cloud",
+                    "ai_ml"
+                ]
+            },
+            "business": {
+                "startup": [
+                    "mvp",
+                    "pivot",
+                    "runway",
+                    "burn_rate",
+                    "cap_table"
+                ],
+                "finance": [
+                    "arr",
+                    "mrr",
+                    "ltv",
+                    "cac",
+                    "ebitda"
+                ],
+                "growth": [
+                    "pmf",
+                    "tam",
+                    "sam",
+                    "som",
+                    "nps"
+                ]
+            },
+            "cultural": {
+                "israeli": [
+                    "chutzpah",
+                    "yalla",
+                    "sababa",
+                    "balagan"
+                ],
+                "american": [
+                    "hustle",
+                    "grind",
+                    "pivot",
+                    "scale"
+                ],
+                "british": [
+                    "keen",
+                    "brilliant",
+                    "sorted",
+                    "dodgy"
+                ]
+            }
+        },
+        "explanationLevels": {
+            "eli5": "Explain like I'm 5",
+            "beginner": "New to tech",
+            "intermediate": "Some experience",
+            "expert": "Deep technical",
+            "contextual": "Based on recipient's background"
+        }
+    },
+    "personalization": {
+        "factors": [
+            "technical_level",
+            "industry_background",
+            "cultural_context",
+            "role_specific",
+            "company_stage"
+        ],
+        "adaptation": {
+            "forDevelopers": {
+                "useCodeExamples": true,
+                "technicalDepth": "high",
+                "assumedKnowledge": [
+                    "git",
+                    "apis",
+                    "databases"
+                ]
+            },
+            "forManagers": {
+                "focusOnImpact": true,
+                "businessMetrics": true,
+                "avoidJargon": "moderate"
+            },
+            "forDesigners": {
+                "visualMetaphors": true,
+                "userExperience": true,
+                "technicalDepth": "low"
+            }
+        }
+    },
+    "features": {
+        "jargonDetection": {
+            "automatic": true,
+            "threshold": 0.7,
+            "database": "continuously_updated"
+        },
+        "contextualTranslation": {
+            "considerIndustry": true,
+            "considerRole": true,
+            "considerCulture": true
+        },
+        "glossaryBuilding": {
+            "perCompany": true,
+            "perIndustry": true,
+            "shareable": true
+        }
+    },
+    "examples": {
+        "technical": {
+            "microservices": {
+                "eli5": "Like LEGO blocks for building apps",
+                "beginner": "Small, independent parts of an application",
+                "expert": "Distributed architecture pattern with bounded contexts"
+            },
+            "kubernetes": {
+                "eli5": "A robot that manages your app containers",
+                "beginner": "Tool for managing multiple Docker containers",
+                "expert": "Container orchestration platform with declarative configuration"
+            }
+        },
+        "business": {
+            "productMarketFit": {
+                "eli5": "When people really want what you're making",
+                "beginner": "Your product solves a real problem people will pay for",
+                "expert": "Validated value proposition with repeatable sales process"
+            }
+        }
+    },
+    "integration": {
+        "messageCrafter": {
+            "autoTranslate": true,
+            "inlineExplanations": true,
+            "tooltips": "optional"
+        },
+        "profileAnalyzer": {
+            "detectTechnicalLevel": true,
+            "suggestExplanationDepth": true
+        }
+    },
+    "learning": {
+        "feedbackLoop": true,
+        "termDatabase": {
+            "size": "10000+",
+            "languages": [
+                "en",
+                "he"
+            ],
+            "updateFrequency": "weekly"
+        },
+        "communityContributions": true
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/dictionary-bot",
+        "websocket": "/ws/dictionary",
+        "widget": "/widget/dictionary"
+    },
+    "performance": {
+        "caching": true,
+        "responseTime": "< 100ms",
+        "batchProcessing": true
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "name": "Auto Recruiter",
+    "emoji": "⚡",
+    "version": "1.0.0",
+    "description": "Expands resource pool with CFO oversight - finds new candidates efficiently",
+    "priority": 2,
+    "type": "store",
+    "role": "resource_expansion",
+    "dependencies": [
+        "smart-database",
+        "cfo"
+    ],
+    "capabilities": [
+        "linkedin_search",
+        "github_discovery",
+        "community_scanning",
+        "cost_optimization",
+        "bulk_processing",
+        "deduplication"
+    ],
+    "integrations": {
+        "linkedin": {
+            "recruiter": true,
+            "salesNavigator": true,
+            "limits": {
+                "daily": 100,
+                "monthly": 2000
+            }
+        },
+        "github": {
+            "search": true,
+            "trending": true,
+            "languages": [
+                "Python",
+                "JavaScript",
+                "Go",
+                "Rust"
+            ]
+        },
+        "costControl": {
+            "approvalRequired": true,
+            "approver": "cfo",
+            "limits": {
+                "perSearch": 10,
+                "daily": 100,
+                "monthly": 2000
+            }
+        }
+    },
+    "settings": {
+        "batchSize": 50,
+        "parallelSearches": 3,
+        "deduplicationEnabled": true,
+        "qualityThreshold": 0.7,
+        "costPerCandidate": 0.10
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/auto-recruiter",
+        "websocket": "/ws/auto-recruiter"
+    },
+    "smartLoop": {
+        "position": 2,
+        "inputs": [
+            "resource_map",
+            "job_requirements"
+        ],
+        "outputs": [
+            "expanded_candidate_pool",
+            "cost_report"
+        ],
+        "triggers": [
+            "smart_database_complete",
+            "manual_expansion_request",
+            "low_candidate_count"
+        ]
+    }
+}

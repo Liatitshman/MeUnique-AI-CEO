@@ -1,0 +1,281 @@
+{
+    "name": "Talent Sourcer",
+    "emoji": "🕵️",
+    "version": "1.0.0",
+    "description": "Advanced search specialist - finds hidden gems and passive candidates",
+    "priority": 7,
+    "type": "store",
+    "role": "sourcing_specialist",
+    "capabilities": [
+        "advanced_search",
+        "boolean_queries",
+        "cross_platform_search",
+        "passive_candidate_identification",
+        "competitor_mapping",
+        "talent_pooling"
+    ],
+    "searchEngines": {
+        "linkedin": {
+            "features": [
+                "sales_navigator",
+                "recruiter_lite",
+                "boolean_search",
+                "saved_searches",
+                "talent_insights"
+            ],
+            "operators": {
+                "AND": "must have all terms",
+                "OR": "any of the terms",
+                "NOT": "exclude terms",
+                "quotes": "exact phrase",
+                "parentheses": "group terms",
+                "wildcard": "partial matches"
+            },
+            "filters": {
+                "location": [
+                    "city",
+                    "country",
+                    "remote"
+                ],
+                "experience": [
+                    "years",
+                    "level",
+                    "function"
+                ],
+                "company": [
+                    "current",
+                    "past",
+                    "size",
+                    "industry"
+                ],
+                "education": [
+                    "degree",
+                    "field",
+                    "school"
+                ],
+                "skills": [
+                    "endorsed",
+                    "mentioned",
+                    "certified"
+                ]
+            }
+        },
+        "github": {
+            "searchCriteria": [
+                "repositories",
+                "contributions",
+                "stars",
+                "followers",
+                "languages",
+                "activity"
+            ],
+            "qualityIndicators": [
+                "commit_frequency",
+                "code_quality",
+                "documentation",
+                "community_engagement",
+                "project_complexity"
+            ]
+        },
+        "other": {
+            "platforms": [
+                "stackoverflow",
+                "twitter",
+                "discord",
+                "slack",
+                "guysbox"
+            ],
+            "aggregators": [
+                "hiretual",
+                "seekout",
+                "entelo"
+            ],
+            "databases": [
+                "zoominfo",
+                "clearbit",
+                "lusha"
+            ]
+        }
+    },
+    "searchStrategies": {
+        "direct": {
+            "description": "Exact role and skill match",
+            "precision": "high",
+            "volume": "low",
+            "example": "Senior React Developer AND TypeScript AND Node.js"
+        },
+        "adjacent": {
+            "description": "Similar roles or transferable skills",
+            "precision": "medium",
+            "volume": "medium",
+            "example": "Vue.js OR Angular (for React roles)"
+        },
+        "competitor": {
+            "description": "Target specific companies",
+            "precision": "high",
+            "volume": "medium",
+            "example": "company:Wix OR company:Monday.com"
+        },
+        "passive": {
+            "description": "Not actively looking but open",
+            "indicators": [
+                "profile_views_increased",
+                "skills_updated_recently",
+                "open_to_work_subtle",
+                "engagement_with_recruiters"
+            ]
+        }
+    },
+    "talentMapping": {
+        "competitorAnalysis": {
+            "track": [
+                "key_players",
+                "team_structure",
+                "recent_hires",
+                "departures"
+            ],
+            "alert": [
+                "layoffs",
+                "funding",
+                "expansion",
+                "pivot"
+            ]
+        },
+        "marketIntelligence": {
+            "salaryBenchmarks": true,
+            "skillTrends": true,
+            "hiringVelocity": true,
+            "talentDensity": true
+        },
+        "pipelining": {
+            "categories": [
+                "immediate",
+                "3_months",
+                "6_months",
+                "future"
+            ],
+            "nurture": [
+                "content",
+                "events",
+                "opportunities",
+                "connections"
+            ]
+        }
+    },
+    "sourcing Techniques": {
+        "xRay": {
+            "google": "site:linkedin.com/in/ 'software engineer' Tel Aviv -jobs",
+            "customDomains": "site:company.com filetype:pdf resume"
+        },
+        "flipSearch": {
+            "description": "Find people who view similar profiles",
+            "implementation": "profile_viewers_analysis"
+        },
+        "referralMining": {
+            "description": "Leverage employee networks",
+            "approach": [
+                "common_connections",
+                "school_alumni",
+                "previous_companies"
+            ]
+        },
+        "eventSourcing": {
+            "conferences": [
+                "attendee_lists",
+                "speaker_profiles",
+                "sponsor_employees"
+            ],
+            "meetups": [
+                "rsvp_lists",
+                "organizers",
+                "active_members"
+            ],
+            "online": [
+                "webinar_participants",
+                "slack_communities",
+                "discord_servers"
+            ]
+        }
+    },
+    "automation": {
+        "savedSearches": {
+            "frequency": "daily",
+            "alerts": "new_matches",
+            "autoRefresh": true
+        },
+        "bulkOperations": {
+            "export": [
+                "csv",
+                "crm_integration"
+            ],
+            "tagging": "automatic",
+            "scoring": "ml_based"
+        },
+        "apiIntegration": {
+            "linkedin": "sales_navigator_api",
+            "enrichment": "clearbit_api",
+            "verification": "email_verification_api"
+        }
+    },
+    "qualityControl": {
+        "deduplication": {
+            "crossPlatform": true,
+            "fuzzyMatching": true,
+            "mergeProfiles": "intelligent"
+        },
+        "verification": {
+            "email": "validity_check",
+            "profile": "recency_check",
+            "activity": "engagement_check"
+        },
+        "scoring": {
+            "relevance": "skill_match + experience + culture",
+            "availability": "signals + timing + engagement",
+            "quality": "achievements + references + portfolio"
+        }
+    },
+    "israeliMarket": {
+        "platforms": {
+            "guysbox": {
+                "focus": "israeli_tech",
+                "features": [
+                    "job_board",
+                    "community",
+                    "events"
+                ]
+            },
+            "facebook": {
+                "groups": [
+                    "secret_tel_aviv",
+                    "startup_jobs_israel"
+                ],
+                "pages": [
+                    "tech_companies",
+                    "hr_communities"
+                ]
+            }
+        },
+        "searches": {
+            "hebrew": "מפתח OR מהנדס OR דאטה",
+            "military": "8200 OR mamram OR 81",
+            "universities": "technion OR tau OR huji"
+        }
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/talent-sourcer",
+        "websocket": "/ws/sourcer",
+        "bulk": "/api/bulk/source"
+    },
+    "metrics": {
+        "efficiency": {
+            "searchTime": "< 5 minutes",
+            "accuracy": "> 80%",
+            "coverage": "95% of market"
+        },
+        "quality": {
+            "responseRate": "from_sourced",
+            "conversionRate": "to_interview",
+            "diversityMetrics": "track"
+        }
+    }
+}

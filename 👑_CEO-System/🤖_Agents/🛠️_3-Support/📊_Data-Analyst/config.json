@@ -1,0 +1,280 @@
+{
+    "name": "Data Analyst",
+    "emoji": "📊",
+    "version": "1.0.0",
+    "description": "Insights generator - transforms data into actionable intelligence",
+    "priority": 13,
+    "type": "support",
+    "role": "analytics_specialist",
+    "capabilities": [
+        "data_analysis",
+        "trend_identification",
+        "predictive_modeling",
+        "visualization",
+        "reporting",
+        "insights_generation"
+    ],
+    "analyticsFramework": {
+        "dataCollection": {
+            "sources": [
+                "agent_activities",
+                "candidate_interactions",
+                "search_results",
+                "message_performance",
+                "cost_data",
+                "market_intelligence"
+            ],
+            "realTime": {
+                "streaming": true,
+                "latency": "< 1 second",
+                "processing": "event_driven"
+            },
+            "batch": {
+                "frequency": "hourly",
+                "aggregation": "dimensional",
+                "storage": "data_warehouse"
+            }
+        },
+        "metrics": {
+            "operational": {
+                "agentPerformance": [
+                    "response_time",
+                    "accuracy",
+                    "throughput"
+                ],
+                "systemHealth": [
+                    "uptime",
+                    "errors",
+                    "latency"
+                ],
+                "costEfficiency": [
+                    "per_candidate",
+                    "per_hire",
+                    "roi"
+                ]
+            },
+            "business": {
+                "recruitment": [
+                    "time_to_hire",
+                    "quality_of_hire",
+                    "offer_acceptance"
+                ],
+                "engagement": [
+                    "response_rate",
+                    "conversion_rate",
+                    "nps"
+                ],
+                "growth": [
+                    "pipeline_velocity",
+                    "market_coverage",
+                    "client_satisfaction"
+                ]
+            },
+            "predictive": {
+                "candidateSuccess": [
+                    "likelihood_to_respond",
+                    "fit_score",
+                    "retention_probability"
+                ],
+                "marketTrends": [
+                    "skill_demand",
+                    "salary_trends",
+                    "competition"
+                ],
+                "optimization": [
+                    "best_time_to_contact",
+                    "optimal_message_length",
+                    "channel_preference"
+                ]
+            }
+        }
+    },
+    "analysisTypes": {
+        "descriptive": {
+            "dashboards": [
+                "executive",
+                "operational",
+                "tactical"
+            ],
+            "reports": [
+                "daily",
+                "weekly",
+                "monthly",
+                "quarterly"
+            ],
+            "adhoc": "on_demand"
+        },
+        "diagnostic": {
+            "rootCause": "automated_detection",
+            "anomalyDetection": "ml_based",
+            "correlation": "multi_dimensional"
+        },
+        "predictive": {
+            "models": {
+                "responseRate": "gradient_boosting",
+                "candidateQuality": "neural_network",
+                "timeToHire": "regression"
+            },
+            "accuracy": "> 85%",
+            "retraining": "weekly"
+        },
+        "prescriptive": {
+            "recommendations": "ai_powered",
+            "optimization": "continuous",
+            "scenarios": "what_if_analysis"
+        }
+    },
+    "visualization": {
+        "tools": [
+            "d3js",
+            "chartjs",
+            "tableau"
+        ],
+        "types": {
+            "realTime": [
+                "gauges",
+                "sparklines",
+                "heatmaps"
+            ],
+            "trends": [
+                "line_charts",
+                "area_charts",
+                "candlesticks"
+            ],
+            "comparison": [
+                "bar_charts",
+                "radar_charts",
+                "scatter_plots"
+            ],
+            "flow": [
+                "sankey",
+                "funnel",
+                "journey_maps"
+            ]
+        },
+        "interactive": {
+            "filters": "dynamic",
+            "drillDown": "unlimited",
+            "export": [
+                "pdf",
+                "excel",
+                "api"
+            ]
+        }
+    },
+    "insights": {
+        "generation": {
+            "automated": {
+                "frequency": "continuous",
+                "relevance": "context_aware",
+                "priority": "impact_based"
+            },
+            "types": [
+                "anomalies",
+                "trends",
+                "patterns",
+                "opportunities",
+                "risks"
+            ]
+        },
+        "delivery": {
+            "channels": [
+                "dashboard",
+                "email",
+                "slack",
+                "api"
+            ],
+            "format": [
+                "narrative",
+                "visual",
+                "data"
+            ],
+            "timing": [
+                "real_time",
+                "scheduled",
+                "triggered"
+            ]
+        }
+    },
+    "marketIntelligence": {
+        "competitive": {
+            "tracking": [
+                "hiring_velocity",
+                "team_growth",
+                "skill_focus"
+            ],
+            "benchmarking": [
+                "salaries",
+                "benefits",
+                "culture"
+            ],
+            "alerts": [
+                "key_moves",
+                "layoffs",
+                "expansions"
+            ]
+        },
+        "talent": {
+            "supply": [
+                "availability",
+                "location",
+                "skills"
+            ],
+            "demand": [
+                "job_postings",
+                "skill_requests",
+                "salary_trends"
+            ],
+            "flow": [
+                "company_movements",
+                "career_paths",
+                "retention"
+            ]
+        }
+    },
+    "integration": {
+        "dataSources": {
+            "internal": [
+                "all_agents",
+                "database",
+                "logs"
+            ],
+            "external": [
+                "linkedin",
+                "github",
+                "market_data"
+            ],
+            "apis": [
+                "rest",
+                "graphql",
+                "websocket"
+            ]
+        },
+        "output": {
+            "dashboards": "embedded",
+            "api": "restful",
+            "exports": [
+                "csv",
+                "json",
+                "parquet"
+            ]
+        }
+    },
+    "privacy": {
+        "anonymization": "automatic",
+        "aggregation": "minimum_5",
+        "retention": "policy_based",
+        "access": "role_based"
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/data-analyst",
+        "dashboard": "/dashboard/analytics",
+        "reports": "/reports/analytics",
+        "insights": "/api/insights"
+    },
+    "performance": {
+        "querySpeed": "< 2 seconds",
+        "caching": "intelligent",
+        "scaling": "horizontal"
+    }
+}

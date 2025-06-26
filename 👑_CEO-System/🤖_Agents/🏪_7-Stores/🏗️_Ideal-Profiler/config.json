@@ -1,0 +1,149 @@
+{
+    "name": "Ideal Profiler",
+    "emoji": "🏗️",
+    "version": "1.0.0",
+    "description": "NEW! Builds the perfect candidate profile based on company needs and market reality",
+    "priority": 4,
+    "type": "store",
+    "role": "profile_builder",
+    "isNew": true,
+    "capabilities": [
+        "ideal_profile_creation",
+        "requirement_analysis",
+        "market_reality_check",
+        "skill_prioritization",
+        "culture_integration",
+        "compensation_benchmarking"
+    ],
+    "profileBuilding": {
+        "sources": {
+            "explicit": [
+                "job_description",
+                "hiring_manager_input",
+                "team_requirements"
+            ],
+            "implicit": [
+                "successful_hires_analysis",
+                "team_composition",
+                "company_trajectory",
+                "market_conditions"
+            ],
+            "datadriven": [
+                "performance_metrics",
+                "retention_data",
+                "promotion_patterns",
+                "peer_benchmarks"
+            ]
+        },
+        "dimensions": {
+            "technical": {
+                "mustHave": "Critical skills that can't be compromised",
+                "niceToHave": "Skills that add value but can be learned",
+                "futureNeeds": "Skills for where the company is heading"
+            },
+            "cultural": {
+                "values": "Core values alignment",
+                "workStyle": "Pace, autonomy, collaboration preferences",
+                "communication": "Style and frequency expectations"
+            },
+            "experience": {
+                "industry": "Relevant vs transferable",
+                "stage": "Startup vs enterprise experience",
+                "achievements": "Impact and scale of past work"
+            }
+        }
+    },
+    "realityCheck": {
+        "marketAvailability": {
+            "check": "How many such candidates exist?",
+            "adjust": "What compromises make sense?",
+            "alternatives": "What adjacent profiles work?"
+        },
+        "competitionAnalysis": {
+            "whoElseHiring": "Which companies target similar profiles?",
+            "compensation": "What are they offering?",
+            "advantages": "What's our unique appeal?"
+        },
+        "timelineReality": {
+            "urgency": "How fast do we need to hire?",
+            "pipeline": "How long will sourcing take?",
+            "compromise": "What can we flex on for speed?"
+        }
+    },
+    "profileOptimization": {
+        "80_20_rule": {
+            "focus": "20% of requirements that matter 80%",
+            "eliminate": "Nice-to-haves that limit candidate pool",
+            "substitute": "Alternative ways to get same outcome"
+        },
+        "growthPotential": {
+            "learnability": "Can they grow into the role?",
+            "motivation": "Will this excite them?",
+            "trajectory": "Where can this lead them?"
+        },
+        "teamFit": {
+            "complement": "What does the team need?",
+            "diversity": "What perspectives are missing?",
+            "dynamics": "How will they mesh?"
+        }
+    },
+    "outputFormats": {
+        "searchQuery": {
+            "boolean": "Optimized LinkedIn/GitHub search strings",
+            "filters": "Practical search parameters",
+            "keywords": "Terms that surface right candidates"
+        },
+        "scoringRubric": {
+            "weights": "What matters most?",
+            "thresholds": "Minimum acceptable levels",
+            "tradeoffs": "Approved compromises"
+        },
+        "outreachGuide": {
+            "hooks": "What will resonate with this profile?",
+            "value_prop": "Why should they be interested?",
+            "concerns": "What objections to address?"
+        }
+    },
+    "integration": {
+        "fromSmartDB": {
+            "historicalSuccess": "What worked before",
+            "marketIntel": "Current talent landscape",
+            "companyPatterns": "Internal success factors"
+        },
+        "toCultureMatcher": {
+            "idealCulture": "Cultural traits to match",
+            "flexibilityAreas": "Where culture can vary",
+            "redFlags": "Cultural dealbreakers"
+        },
+        "toTalentSourcer": {
+            "searchCriteria": "Refined search parameters",
+            "priorityOrder": "Which profiles to pursue first",
+            "alternativePools": "Where else to look"
+        }
+    },
+    "adaptiveLearning": {
+        "feedbackLoop": {
+            "hired": "What actually worked?",
+            "rejected": "Why did we pass?",
+            "declined": "Why did they pass?"
+        },
+        "continuousImprovement": {
+            "profileRefinement": "Adjust based on outcomes",
+            "marketCalibration": "Update for market changes",
+            "teamEvolution": "Adapt as team grows"
+        }
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/ideal-profiler",
+        "websocket": "/ws/ideal-profiler",
+        "dashboard": "/dashboard/ideal-profiles"
+    },
+    "examples": {
+        "seniorFullStack": {
+            "ideal": "5+ years, React/Node, startup experience",
+            "reality": "Very competitive, $180K+ market",
+            "adjusted": "3+ years with strong fundamentals, high growth potential",
+            "search": "React OR Vue, Node OR Python, series A-C companies"
+        }
+    }
+}

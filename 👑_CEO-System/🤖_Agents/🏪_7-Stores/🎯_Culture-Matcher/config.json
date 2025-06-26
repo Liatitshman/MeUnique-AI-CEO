@@ -1,0 +1,109 @@
+{
+    "name": "Culture Matcher",
+    "emoji": "🎯",
+    "version": "1.0.0",
+    "description": "Analyzes cultural fit and personality alignment between candidates and companies",
+    "priority": 3,
+    "type": "store",
+    "role": "cultural_analysis",
+    "dependencies": [
+        "smart-database",
+        "auto-recruiter"
+    ],
+    "capabilities": [
+        "personality_analysis",
+        "cultural_mapping",
+        "team_dynamics",
+        "value_alignment",
+        "communication_style",
+        "work_preference_matching"
+    ],
+    "analysis": {
+        "dimensions": {
+            "workStyle": [
+                "independent",
+                "collaborative",
+                "hybrid"
+            ],
+            "pace": [
+                "fast-paced",
+                "steady",
+                "flexible"
+            ],
+            "culture": [
+                "startup",
+                "corporate",
+                "scale-up"
+            ],
+            "values": [
+                "innovation",
+                "stability",
+                "growth",
+                "impact"
+            ],
+            "communication": [
+                "direct",
+                "diplomatic",
+                "analytical",
+                "creative"
+            ]
+        },
+        "sources": {
+            "linkedin": [
+                "about",
+                "posts",
+                "endorsements"
+            ],
+            "github": [
+                "readme",
+                "commit_messages",
+                "issues"
+            ],
+            "social": [
+                "twitter",
+                "blog_posts"
+            ]
+        }
+    },
+    "matching": {
+        "algorithm": "multi-dimensional-scoring",
+        "weights": {
+            "hardSkills": 0.4,
+            "softSkills": 0.3,
+            "culturalFit": 0.3
+        },
+        "threshold": 0.75
+    },
+    "insights": {
+        "redFlags": [
+            "value_mismatch",
+            "pace_conflict",
+            "communication_gap"
+        ],
+        "greenFlags": [
+            "shared_values",
+            "complementary_skills",
+            "growth_mindset"
+        ]
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/culture-matcher",
+        "websocket": "/ws/culture-matcher"
+    },
+    "smartLoop": {
+        "position": 3,
+        "inputs": [
+            "expanded_candidate_pool",
+            "company_culture_profile"
+        ],
+        "outputs": [
+            "culturally_aligned_candidates",
+            "fit_scores",
+            "insights"
+        ],
+        "triggers": [
+            "auto_recruiter_complete",
+            "manual_culture_check"
+        ]
+    }
+}

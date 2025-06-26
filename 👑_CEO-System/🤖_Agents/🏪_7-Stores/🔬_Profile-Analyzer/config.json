@@ -1,0 +1,274 @@
+{
+    "name": "Profile Analyzer",
+    "emoji": "🔬",
+    "version": "1.0.0",
+    "description": "Deep analysis engine - extracts personality, skills, and hidden insights",
+    "priority": 5,
+    "type": "store",
+    "role": "analysis_specialist",
+    "capabilities": [
+        "personality_detection",
+        "skill_extraction",
+        "experience_mapping",
+        "cultural_fit_analysis",
+        "growth_trajectory",
+        "hidden_insights"
+    ],
+    "analysisDepth": {
+        "levels": {
+            "surface": {
+                "time": "< 1 second",
+                "dataPoints": [
+                    "title",
+                    "company",
+                    "education"
+                ],
+                "accuracy": "70%"
+            },
+            "standard": {
+                "time": "5-10 seconds",
+                "dataPoints": [
+                    "experience",
+                    "skills",
+                    "recommendations",
+                    "activity"
+                ],
+                "accuracy": "85%"
+            },
+            "deep": {
+                "time": "30-60 seconds",
+                "dataPoints": [
+                    "writing_style",
+                    "interests",
+                    "values",
+                    "personality",
+                    "connections"
+                ],
+                "accuracy": "95%"
+            }
+        }
+    },
+    "personalityAnalysis": {
+        "frameworks": {
+            "big5": {
+                "openness": "creativity and curiosity",
+                "conscientiousness": "organization and dependability",
+                "extraversion": "sociability and assertiveness",
+                "agreeableness": "cooperation and trust",
+                "neuroticism": "emotional stability"
+            },
+            "disc": {
+                "dominance": "results-oriented",
+                "influence": "people-oriented",
+                "steadiness": "cooperation-focused",
+                "conscientiousness": "accuracy-focused"
+            }
+        },
+        "indicators": {
+            "writingStyle": {
+                "vocabulary": "technical vs casual",
+                "sentenceLength": "concise vs elaborate",
+                "emoticons": "formal vs friendly",
+                "punctuation": "precise vs relaxed"
+            },
+            "activityPatterns": {
+                "postingTime": "early bird vs night owl",
+                "frequency": "active vs selective",
+                "topics": "interests and values",
+                "engagement": "leader vs supporter"
+            }
+        }
+    },
+    "skillExtraction": {
+        "sources": [
+            "explicit_skills",
+            "job_descriptions",
+            "project_details",
+            "recommendations",
+            "certifications",
+            "github_repos"
+        ],
+        "categorization": {
+            "technical": {
+                "languages": [
+                    "proficiency_level",
+                    "years_used",
+                    "recent_activity"
+                ],
+                "frameworks": [
+                    "expertise_depth",
+                    "project_count",
+                    "contribution_type"
+                ],
+                "tools": [
+                    "daily_use",
+                    "advanced_features",
+                    "teaching_others"
+                ]
+            },
+            "soft": {
+                "leadership": [
+                    "team_size",
+                    "project_impact",
+                    "mentoring"
+                ],
+                "communication": [
+                    "writing_quality",
+                    "presentation_count",
+                    "language_skills"
+                ],
+                "problemSolving": [
+                    "complexity_handled",
+                    "innovation_shown",
+                    "results_achieved"
+                ]
+            }
+        },
+        "validation": {
+            "crossReference": true,
+            "endorsements": "weighted",
+            "projectEvidence": "required"
+        }
+    },
+    "careerTrajectory": {
+        "analysis": {
+            "growthRate": "role_progression_speed",
+            "ambition": "goal_indicators",
+            "stability": "tenure_patterns",
+            "riskTolerance": "company_types"
+        },
+        "predictions": {
+            "nextMove": {
+                "timing": "6-24 months",
+                "direction": [
+                    "vertical",
+                    "lateral",
+                    "entrepreneurial"
+                ],
+                "triggers": [
+                    "funding",
+                    "ipo",
+                    "acquisition",
+                    "milestone"
+                ]
+            },
+            "longTerm": {
+                "potential": [
+                    "ic_expert",
+                    "manager",
+                    "founder",
+                    "executive"
+                ],
+                "timeline": "3-5 years"
+            }
+        }
+    },
+    "culturalFit": {
+        "dimensions": {
+            "workStyle": [
+                "independent",
+                "collaborative",
+                "structured",
+                "flexible"
+            ],
+            "values": [
+                "innovation",
+                "stability",
+                "impact",
+                "growth",
+                "balance"
+            ],
+            "environment": [
+                "startup",
+                "scaleup",
+                "enterprise",
+                "remote",
+                "hybrid"
+            ],
+            "pace": [
+                "fast",
+                "steady",
+                "variable",
+                "intense"
+            ]
+        },
+        "matching": {
+            "algorithm": "multi_dimensional_vector",
+            "weight": "context_dependent",
+            "threshold": 0.7
+        }
+    },
+    "hiddenInsights": {
+        "patterns": {
+            "jobHopping": {
+                "threshold": "2 years",
+                "context": [
+                    "industry_norm",
+                    "career_stage",
+                    "company_stability"
+                ]
+            },
+            "sideProjects": {
+                "indicators": [
+                    "github",
+                    "personal_site",
+                    "volunteering"
+                ],
+                "interpretation": [
+                    "passion",
+                    "skills",
+                    "entrepreneurial"
+                ]
+            },
+            "networkQuality": {
+                "connections": [
+                    "diversity",
+                    "seniority",
+                    "relevance"
+                ],
+                "engagement": [
+                    "mutual",
+                    "endorsements",
+                    "recommendations"
+                ]
+            }
+        }
+    },
+    "scoring": {
+        "dimensions": {
+            "technical": 0.3,
+            "cultural": 0.25,
+            "potential": 0.25,
+            "experience": 0.2
+        },
+        "output": {
+            "overallScore": "0-100",
+            "breakdown": "by_dimension",
+            "confidence": "percentage",
+            "highlights": "top_3",
+            "concerns": "if_any"
+        }
+    },
+    "integration": {
+        "inputs": {
+            "linkedinProfile": "full_data",
+            "githubProfile": "optional",
+            "companyData": "for_context"
+        },
+        "outputs": {
+            "format": "structured_json",
+            "visualization": "radar_chart",
+            "summary": "executive_brief"
+        }
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/profile-analyzer",
+        "websocket": "/ws/analyzer",
+        "batch": "/api/batch/analyze"
+    },
+    "performance": {
+        "caching": "intelligent",
+        "parallel": true,
+        "rateLimit": "100/minute"
+    }
+}

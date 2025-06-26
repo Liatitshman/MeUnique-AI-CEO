@@ -1,0 +1,331 @@
+{
+    "name": "Customer Success",
+    "emoji": "🤝",
+    "version": "1.0.0",
+    "description": "Client champion - ensures satisfaction, retention, and growth",
+    "priority": 14,
+    "type": "support",
+    "role": "success_manager",
+    "capabilities": [
+        "client_onboarding",
+        "relationship_management",
+        "satisfaction_monitoring",
+        "retention_optimization",
+        "upsell_identification",
+        "feedback_management"
+    ],
+    "clientLifecycle": {
+        "onboarding": {
+            "phases": {
+                "kickoff": {
+                    "duration": "1 day",
+                    "activities": [
+                        "welcome",
+                        "expectations",
+                        "setup"
+                    ],
+                    "deliverables": [
+                        "account_setup",
+                        "training_schedule",
+                        "success_plan"
+                    ]
+                },
+                "implementation": {
+                    "duration": "1 week",
+                    "activities": [
+                        "integration",
+                        "customization",
+                        "training"
+                    ],
+                    "milestones": [
+                        "first_search",
+                        "first_message",
+                        "first_response"
+                    ]
+                },
+                "adoption": {
+                    "duration": "2 weeks",
+                    "activities": [
+                        "monitoring",
+                        "optimization",
+                        "coaching"
+                    ],
+                    "metrics": [
+                        "usage",
+                        "results",
+                        "satisfaction"
+                    ]
+                }
+            },
+            "automation": {
+                "welcomeSequence": true,
+                "progressTracking": true,
+                "alerts": "milestone_based"
+            }
+        },
+        "engagement": {
+            "regular": {
+                "checkIns": {
+                    "frequency": "weekly",
+                    "format": [
+                        "call",
+                        "email",
+                        "dashboard"
+                    ],
+                    "agenda": [
+                        "results",
+                        "challenges",
+                        "opportunities"
+                    ]
+                },
+                "reviews": {
+                    "frequency": "monthly",
+                    "participants": [
+                        "client",
+                        "ceo",
+                        "success_manager"
+                    ],
+                    "topics": [
+                        "roi",
+                        "goals",
+                        "strategy"
+                    ]
+                }
+            },
+            "proactive": {
+                "healthScore": {
+                    "factors": [
+                        "usage",
+                        "results",
+                        "satisfaction",
+                        "engagement"
+                    ],
+                    "threshold": {
+                        "green": "> 80",
+                        "yellow": "60-80",
+                        "red": "< 60"
+                    }
+                },
+                "interventions": {
+                    "triggers": [
+                        "low_usage",
+                        "poor_results",
+                        "negative_feedback"
+                    ],
+                    "actions": [
+                        "reach_out",
+                        "training",
+                        "optimization"
+                    ]
+                }
+            }
+        }
+    },
+    "satisfaction": {
+        "measurement": {
+            "nps": {
+                "frequency": "quarterly",
+                "target": "> 50",
+                "followUp": "all_responses"
+            },
+            "csat": {
+                "touchpoints": [
+                    "onboarding",
+                    "support",
+                    "results"
+                ],
+                "target": "> 4.5/5",
+                "realTime": true
+            },
+            "feedback": {
+                "channels": [
+                    "surveys",
+                    "calls",
+                    "chat",
+                    "email"
+                ],
+                "analysis": "sentiment + topics",
+                "action": "prioritized"
+            }
+        },
+        "improvement": {
+            "process": {
+                "collection": "continuous",
+                "prioritization": "impact_effort_matrix",
+                "implementation": "agile"
+            },
+            "communication": {
+                "updates": "monthly",
+                "roadmap": "quarterly",
+                "wins": "celebrated"
+            }
+        }
+    },
+    "retention": {
+        "strategies": {
+            "value": {
+                "demonstration": "monthly_reports",
+                "optimization": "continuous",
+                "benchmarking": "industry_standards"
+            },
+            "relationship": {
+                "depth": "multi_threaded",
+                "touchpoints": "regular",
+                "personalization": "high"
+            },
+            "growth": {
+                "expansion": "identified_opportunities",
+                "upsell": "value_based",
+                "advocacy": "referral_program"
+            }
+        },
+        "riskManagement": {
+            "indicators": [
+                "usage_decline",
+                "engagement_drop",
+                "support_tickets",
+                "payment_delays"
+            ],
+            "mitigation": {
+                "playbooks": "scenario_based",
+                "escalation": "defined",
+                "saveRate": "> 80%"
+            }
+        }
+    },
+    "growth": {
+        "expansion": {
+            "opportunities": [
+                "additional_roles",
+                "new_departments",
+                "more_searches",
+                "premium_features"
+            ],
+            "timing": {
+                "signals": [
+                    "success_metrics",
+                    "request_patterns",
+                    "growth_indicators"
+                ],
+                "approach": "consultative"
+            }
+        },
+        "advocacy": {
+            "programs": {
+                "referrals": {
+                    "incentives": "mutual_benefit",
+                    "tracking": "automated",
+                    "reward": "immediate"
+                },
+                "testimonials": {
+                    "collection": "success_stories",
+                    "format": [
+                        "written",
+                        "video",
+                        "case_study"
+                    ],
+                    "usage": "marketing"
+                },
+                "community": {
+                    "events": "quarterly",
+                    "content": "user_generated",
+                    "networking": "facilitated"
+                }
+            }
+        }
+    },
+    "support": {
+        "channels": {
+            "priority": {
+                "phone": "immediate",
+                "chat": "< 2 minutes",
+                "email": "< 2 hours"
+            },
+            "availability": {
+                "hours": "9am-6pm IST",
+                "emergency": "24/7",
+                "languages": [
+                    "hebrew",
+                    "english"
+                ]
+            }
+        },
+        "resources": {
+            "knowledge": {
+                "base": "comprehensive",
+                "videos": "step_by_step",
+                "webinars": "weekly"
+            },
+            "training": {
+                "onboarding": "included",
+                "advanced": "monthly",
+                "custom": "on_request"
+            }
+        }
+    },
+    "reporting": {
+        "client": {
+            "dashboards": "white_labeled",
+            "reports": {
+                "frequency": [
+                    "daily",
+                    "weekly",
+                    "monthly"
+                ],
+                "content": [
+                    "activity",
+                    "results",
+                    "roi",
+                    "insights"
+                ],
+                "format": [
+                    "pdf",
+                    "interactive",
+                    "api"
+                ]
+            }
+        },
+        "internal": {
+            "metrics": [
+                "retention",
+                "nps",
+                "usage",
+                "growth"
+            ],
+            "alerts": [
+                "churn_risk",
+                "expansion_opportunity",
+                "milestone"
+            ],
+            "forecasting": "ml_powered"
+        }
+    },
+    "integration": {
+        "crm": [
+            "salesforce",
+            "hubspot",
+            "pipedrive"
+        ],
+        "communication": [
+            "slack",
+            "teams",
+            "email"
+        ],
+        "billing": [
+            "stripe",
+            "recurly",
+            "chargebee"
+        ],
+        "analytics": [
+            "mixpanel",
+            "amplitude",
+            "segment"
+        ]
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/customer-success",
+        "dashboard": "/dashboard/success",
+        "portal": "/client/portal",
+        "support": "/support"
+    }
+}

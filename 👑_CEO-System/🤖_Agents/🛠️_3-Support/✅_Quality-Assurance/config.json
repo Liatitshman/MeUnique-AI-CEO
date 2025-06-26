@@ -1,0 +1,186 @@
+{
+    "name": "Quality Assurance",
+    "emoji": "✅",
+    "version": "1.0.0",
+    "description": "Quality guardian - ensures accuracy, compliance, and candidate experience",
+    "priority": 12,
+    "type": "support",
+    "role": "quality_controller",
+    "capabilities": [
+        "quality_checks",
+        "compliance_monitoring",
+        "accuracy_validation",
+        "experience_optimization",
+        "feedback_collection",
+        "continuous_improvement"
+    ],
+    "qualityFramework": {
+        "dataQuality": {
+            "accuracy": {
+                "profileData": "> 98%",
+                "contactInfo": "> 95%",
+                "skillsExtraction": "> 90%"
+            },
+            "completeness": {
+                "requiredFields": "100%",
+                "enrichmentRate": "> 80%",
+                "validationPassed": "> 95%"
+            },
+            "freshness": {
+                "profileUpdate": "< 30 days",
+                "activityCheck": "< 7 days",
+                "verificationCycle": "monthly"
+            }
+        },
+        "processQuality": {
+            "messageQuality": {
+                "grammarCheck": "automated",
+                "personalizationScore": "> 8/10",
+                "toneConsistency": "verified",
+                "culturalAppropriateness": "validated"
+            },
+            "searchQuality": {
+                "relevanceScore": "> 85%",
+                "duplicateRate": "< 5%",
+                "coverageRate": "> 90%"
+            },
+            "responseHandling": {
+                "timeToResponse": "< 2 hours",
+                "followUpRate": "100%",
+                "escalationProcess": "defined"
+            }
+        }
+    },
+    "compliance": {
+        "regulations": {
+            "gdpr": {
+                "dataMinimization": true,
+                "consentManagement": true,
+                "rightToErasure": true,
+                "dataPortability": true
+            },
+            "ccpa": {
+                "optOut": "supported",
+                "dataDisclosure": "available",
+                "nondiscrimination": "enforced"
+            },
+            "local": {
+                "israel": "privacy_protection_law",
+                "us": "state_specific_laws"
+            }
+        },
+        "ethicalGuidelines": {
+            "bias": {
+                "detection": "automated",
+                "mitigation": "active",
+                "reporting": "transparent"
+            },
+            "fairness": {
+                "equalOpportunity": true,
+                "diversityMetrics": "tracked",
+                "inclusiveLanguage": "enforced"
+            }
+        }
+    },
+    "candidateExperience": {
+        "touchpoints": {
+            "firstContact": {
+                "personalization": "verified",
+                "timing": "optimal",
+                "channel": "preferred"
+            },
+            "communication": {
+                "clarity": "high",
+                "frequency": "balanced",
+                "value": "demonstrated"
+            },
+            "feedback": {
+                "collection": "systematic",
+                "response": "< 24 hours",
+                "implementation": "tracked"
+            }
+        },
+        "metrics": {
+            "nps": "> 8",
+            "responseRate": "tracked",
+            "complaintRate": "< 1%",
+            "referralRate": "> 20%"
+        }
+    },
+    "validation": {
+        "automated": {
+            "dataValidation": {
+                "email": "syntax + deliverability",
+                "phone": "format + validity",
+                "linkedin": "profile_exists + active"
+            },
+            "contentValidation": {
+                "inappropriate": "filtered",
+                "spam": "blocked",
+                "quality": "scored"
+            }
+        },
+        "manual": {
+            "spotChecks": {
+                "frequency": "daily",
+                "sampleSize": "5%",
+                "criteria": "risk_based"
+            },
+            "escalation": {
+                "threshold": "defined",
+                "process": "documented",
+                "resolution": "tracked"
+            }
+        }
+    },
+    "continuousImprovement": {
+        "feedback": {
+            "sources": [
+                "candidates",
+                "clients",
+                "agents",
+                "data"
+            ],
+            "analysis": "weekly",
+            "action": "prioritized"
+        },
+        "testing": {
+            "ab": "continuous",
+            "pilots": "regular",
+            "rollout": "phased"
+        },
+        "learning": {
+            "mistakes": "documented",
+            "successes": "replicated",
+            "insights": "shared"
+        }
+    },
+    "reporting": {
+        "dashboards": {
+            "quality": "real_time",
+            "compliance": "daily",
+            "experience": "weekly"
+        },
+        "alerts": {
+            "critical": {
+                "dataBreak": "immediate",
+                "complianceIssue": "immediate",
+                "candidateComplaint": "< 1 hour"
+            },
+            "warning": {
+                "qualityDrop": "< 4 hours",
+                "trendNegative": "daily"
+            }
+        }
+    },
+    "integration": {
+        "monitoring": "all_agents",
+        "intervention": "automated + manual",
+        "reporting": "ceo + cfo + cto"
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/quality-assurance",
+        "dashboard": "/dashboard/quality",
+        "reports": "/reports/qa"
+    }
+}

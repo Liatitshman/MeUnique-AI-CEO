@@ -1,0 +1,116 @@
+{
+    "name": "CFO Agent",
+    "emoji": "💰",
+    "version": "1.0.0",
+    "description": "Financial guardian - monitors costs, ROI, and ensures budget efficiency",
+    "priority": 9,
+    "type": "management",
+    "role": "financial_controller",
+    "authority": "high",
+    "capabilities": [
+        "cost_monitoring",
+        "budget_management",
+        "roi_calculation",
+        "spend_approval",
+        "financial_reporting",
+        "optimization_recommendations"
+    ],
+    "financialControl": {
+        "budgets": {
+            "daily": 500,
+            "weekly": 2500,
+            "monthly": 10000,
+            "perHire": 3500
+        },
+        "costTracking": {
+            "linkedin": {
+                "search": 0.10,
+                "inmail": 2.00,
+                "recruiterSeat": 825
+            },
+            "ai": {
+                "gpt4": 0.06,
+                "claude": 0.08,
+                "embeddings": 0.02
+            },
+            "infrastructure": {
+                "hosting": 150,
+                "database": 50,
+                "monitoring": 30
+            }
+        },
+        "approvalThresholds": {
+            "automatic": 10,
+            "review": 50,
+            "executive": 200
+        }
+    },
+    "metrics": {
+        "efficiency": {
+            "costPerCandidate": "track",
+            "costPerHire": "optimize",
+            "timeToROI": "measure"
+        },
+        "savings": {
+            "vsTraditional": "70%",
+            "vsCompetitors": "50%",
+            "yearlyProjected": "$500K"
+        }
+    },
+    "optimization": {
+        "strategies": [
+            "Batch API calls",
+            "Cache expensive queries",
+            "Use GPT-3.5 for screening",
+            "Prioritize high-probability candidates"
+        ],
+        "alerts": {
+            "costOverrun": {
+                "threshold": 1.2,
+                "action": "notify_ceo"
+            },
+            "inefficiency": {
+                "threshold": 0.5,
+                "action": "suggest_optimization"
+            }
+        }
+    },
+    "reporting": {
+        "realTime": [
+            "current_spend",
+            "burn_rate",
+            "roi"
+        ],
+        "daily": [
+            "cost_breakdown",
+            "efficiency_metrics"
+        ],
+        "weekly": [
+            "trend_analysis",
+            "optimization_opportunities"
+        ],
+        "monthly": [
+            "full_financial_report",
+            "projections"
+        ]
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/cfo",
+        "websocket": "/ws/cfo",
+        "dashboard": "/dashboard/finance"
+    },
+    "integrations": {
+        "payment": [
+            "stripe",
+            "billing_system"
+        ],
+        "analytics": [
+            "mixpanel",
+            "google_analytics"
+        ],
+        "reporting": [
+            "excel_export",
+            "pdf_generation"
+        ]
+    }
+}

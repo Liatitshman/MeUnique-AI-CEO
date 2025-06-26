@@ -1,0 +1,32 @@
+{
+  "name": "Smart Database",
+  "emoji": "💾",
+  "version": "1.0.0",
+  "description": "The foundation agent - manages resources and target audiences",
+  "priority": 1,
+  "type": "store",
+  "capabilities": [
+    "resource_mapping",
+    "audience_segmentation",
+    "historical_learning",
+    "pattern_recognition",
+    "emotional_mapping",
+    "cultural_tagging"
+  ],
+  "integrations": {
+    "internal": true,
+    "external": ["linkedin", "github", "guysbox"],
+    "ai": ["openai", "claude"]
+  },
+  "settings": {
+    "maxConcurrentQueries": 10,
+    "cacheEnabled": true,
+    "cacheTTL": 3600,
+    "learningEnabled": true,
+    "costPerQuery": 0.01
+  },
+  "endpoints": {
+    "api": "/api/ai/smart/smart-database",
+    "websocket": "/ws/smart-database"
+  }
+} 

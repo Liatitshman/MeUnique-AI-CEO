@@ -1,0 +1,98 @@
+{
+    "name": "CEO Agent",
+    "emoji": "👑",
+    "version": "1.0.0",
+    "description": "The orchestrator - manages all agents and ensures system harmony",
+    "priority": 8,
+    "type": "management",
+    "role": "system_orchestrator",
+    "authority": "highest",
+    "capabilities": [
+        "agent_coordination",
+        "strategy_planning",
+        "conflict_resolution",
+        "performance_monitoring",
+        "decision_making",
+        "resource_allocation"
+    ],
+    "responsibilities": {
+        "strategic": [
+            "Set recruitment strategy",
+            "Define success metrics",
+            "Allocate resources",
+            "Resolve agent conflicts"
+        ],
+        "operational": [
+            "Monitor agent performance",
+            "Approve critical decisions",
+            "Ensure quality standards",
+            "Manage system health"
+        ],
+        "reporting": [
+            "Executive dashboards",
+            "Performance reports",
+            "ROI analysis",
+            "System insights"
+        ]
+    },
+    "agentManagement": {
+        "stores": [
+            "smart-database",
+            "auto-recruiter",
+            "culture-matcher",
+            "ideal-profiler",
+            "profile-analyzer",
+            "message-crafter",
+            "talent-sourcer"
+        ],
+        "management": [
+            "cfo",
+            "cto",
+            "cmo"
+        ],
+        "support": [
+            "quality-assurance",
+            "data-analyst",
+            "customer-success"
+        ]
+    },
+    "decisionFramework": {
+        "priorities": {
+            "quality": 0.4,
+            "speed": 0.3,
+            "cost": 0.2,
+            "scalability": 0.1
+        },
+        "escalation": {
+            "costOverrun": "Notify immediately",
+            "qualityIssue": "Investigate and fix",
+            "agentConflict": "Mediate and resolve",
+            "systemFailure": "Emergency protocol"
+        }
+    },
+    "monitoring": {
+        "realTime": [
+            "agent_status",
+            "system_health",
+            "cost_tracking"
+        ],
+        "periodic": [
+            "performance_review",
+            "strategy_adjustment",
+            "resource_optimization"
+        ]
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/ceo",
+        "websocket": "/ws/ceo",
+        "dashboard": "/dashboard/ceo"
+    },
+    "integrations": {
+        "internal": "all_agents",
+        "external": [
+            "analytics",
+            "reporting",
+            "alerting"
+        ]
+    }
+}

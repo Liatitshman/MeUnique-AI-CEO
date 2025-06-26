@@ -1,0 +1,109 @@
+{
+    "cost_tracking": {
+        "enabled": true,
+        "currency": "USD",
+        "update_interval": 300,
+        "retention_days": 90
+    },
+    "models": {
+        "gpt-4": {
+            "input_cost": 0.03,
+            "output_cost": 0.06,
+            "per_tokens": 1000
+        },
+        "gpt-3.5-turbo": {
+            "input_cost": 0.0015,
+            "output_cost": 0.002,
+            "per_tokens": 1000
+        },
+        "claude-3-opus": {
+            "input_cost": 0.015,
+            "output_cost": 0.075,
+            "per_tokens": 1000
+        },
+        "ollama-llama3": {
+            "input_cost": 0,
+            "output_cost": 0,
+            "per_tokens": 1000,
+            "note": "Local model - no API costs"
+        }
+    },
+    "api_costs": {
+        "linkedin": {
+            "search": 0.10,
+            "profile_view": 0.05,
+            "message_send": 0.02
+        },
+        "github": {
+            "search": 0.05,
+            "repo_analysis": 0.03,
+            "contribution_check": 0.02
+        },
+        "indeed": {
+            "search": 0.08,
+            "candidate_view": 0.04
+        }
+    },
+    "agent_costs": {
+        "smart-database": 0.03,
+        "auto-recruiter": 0.15,
+        "culture-matcher": 0.08,
+        "ideal-profiler": 0.10,
+        "dictionary-bot": 0.02,
+        "profile-analyzer": 0.12,
+        "message-crafter": 0.05,
+        "talent-sourcer": 0.20,
+        "ceo": 0.05,
+        "cfo": 0.03,
+        "cto": 0.04,
+        "cmo": 0.06,
+        "quality-assurance": 0.04,
+        "data-analyst": 0.07,
+        "customer-success": 0.05
+    },
+    "budget_alerts": [
+        {
+            "threshold": 0.5,
+            "action": "notify",
+            "message": "50% of daily budget consumed"
+        },
+        {
+            "threshold": 0.8,
+            "action": "warn",
+            "message": "80% of daily budget consumed - switching to fallback models"
+        },
+        {
+            "threshold": 0.95,
+            "action": "restrict",
+            "message": "95% of daily budget consumed - non-critical operations paused"
+        },
+        {
+            "threshold": 1.0,
+            "action": "shutdown",
+            "message": "Daily budget exceeded - system entering cost-saving mode"
+        }
+    ],
+    "cost_optimization": {
+        "cache_responses": true,
+        "batch_operations": true,
+        "use_fallback_models": true,
+        "smart_routing": true,
+        "deduplication": true
+    },
+    "reporting": {
+        "daily_summary": true,
+        "weekly_report": true,
+        "monthly_analysis": true,
+        "cost_breakdown_by": [
+            "agent",
+            "api",
+            "model",
+            "operation"
+        ],
+        "export_formats": [
+            "json",
+            "csv",
+            "pdf"
+        ]
+    }
+}

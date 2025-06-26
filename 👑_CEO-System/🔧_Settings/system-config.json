@@ -1,0 +1,75 @@
+{
+    "system": {
+        "name": "MeUnique AI CEO System",
+        "version": "1.0.0",
+        "environment": "production",
+        "language": "en",
+        "rtl_support": true,
+        "timezone": "UTC"
+    },
+    "agents": {
+        "enabled": true,
+        "max_concurrent": 5,
+        "timeout": 30000,
+        "retry_attempts": 3,
+        "cost_tracking": true
+    },
+    "database": {
+        "type": "postgresql",
+        "pool_size": 20,
+        "connection_timeout": 5000,
+        "sync_interval": 3600,
+        "backup_enabled": true,
+        "backup_interval": 86400
+    },
+    "integrations": {
+        "linkedin": {
+            "enabled": true,
+            "rate_limit": 100,
+            "rate_period": "hour"
+        },
+        "github": {
+            "enabled": true,
+            "rate_limit": 5000,
+            "rate_period": "hour"
+        },
+        "openai": {
+            "enabled": true,
+            "model": "gpt-4",
+            "fallback_model": "gpt-3.5-turbo",
+            "max_tokens": 2000,
+            "temperature": 0.7
+        }
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics_interval": 60,
+        "health_check_interval": 300,
+        "alert_threshold": {
+            "error_rate": 0.05,
+            "response_time": 5000,
+            "cost_daily": 100
+        }
+    },
+    "security": {
+        "encryption": "AES-256",
+        "session_timeout": 3600,
+        "max_login_attempts": 5,
+        "api_key_rotation": 2592000,
+        "audit_logging": true
+    },
+    "performance": {
+        "cache_enabled": true,
+        "cache_ttl": 3600,
+        "compression": true,
+        "lazy_loading": true,
+        "batch_size": 100
+    },
+    "cost_control": {
+        "daily_budget": 100,
+        "monthly_budget": 2500,
+        "alert_threshold": 0.8,
+        "auto_shutdown": true,
+        "fallback_to_cheap_models": true
+    }
+}

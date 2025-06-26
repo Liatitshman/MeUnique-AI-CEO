@@ -1,0 +1,210 @@
+{
+    "name": "Message Crafter",
+    "emoji": "📝",
+    "version": "1.0.0",
+    "description": "Creates hyper-personalized messages with cultural awareness and A/B testing",
+    "priority": 6,
+    "type": "store",
+    "role": "communication_specialist",
+    "capabilities": [
+        "message_generation",
+        "personalization",
+        "cultural_adaptation",
+        "a_b_testing",
+        "tone_adjustment",
+        "multi_language"
+    ],
+    "personalization": {
+        "levels": {
+            "basic": {
+                "factors": [
+                    "name",
+                    "company",
+                    "role"
+                ],
+                "responseRate": "15-20%"
+            },
+            "advanced": {
+                "factors": [
+                    "experience",
+                    "skills",
+                    "interests",
+                    "recent_activity"
+                ],
+                "responseRate": "25-35%"
+            },
+            "hyper": {
+                "factors": [
+                    "personality",
+                    "values",
+                    "communication_style",
+                    "micro_interests"
+                ],
+                "responseRate": "45-65%"
+            }
+        },
+        "dataPoints": [
+            "profile_analysis",
+            "company_culture",
+            "recent_posts",
+            "shared_connections",
+            "common_interests",
+            "career_trajectory"
+        ]
+    },
+    "messageTypes": {
+        "initialOutreach": {
+            "templates": 50,
+            "languages": [
+                "he",
+                "en"
+            ],
+            "tones": [
+                "professional",
+                "casual",
+                "technical",
+                "friendly"
+            ],
+            "hooks": [
+                "mutual_connection",
+                "shared_interest",
+                "impressive_achievement",
+                "company_news",
+                "role_transition"
+            ]
+        },
+        "followUp": {
+            "sequences": 5,
+            "timing": "intelligent",
+            "persistence": "respectful"
+        },
+        "nurture": {
+            "contentTypes": [
+                "insights",
+                "opportunities",
+                "connections"
+            ],
+            "frequency": "personalized"
+        }
+    },
+    "culturalAdaptation": {
+        "hebrew": {
+            "greetings": [
+                "שלום",
+                "היי",
+                "בוקר טוב"
+            ],
+            "signoffs": [
+                "בברכה",
+                "כל טוב",
+                "להתראות"
+            ],
+            "formality": {
+                "startup": "casual",
+                "enterprise": "formal",
+                "tech": "balanced"
+            },
+            "localReferences": true,
+            "idioms": "native"
+        },
+        "english": {
+            "variants": {
+                "us": "American spelling and idioms",
+                "uk": "British spelling and formality",
+                "international": "Neutral tone"
+            }
+        }
+    },
+    "abTesting": {
+        "elements": [
+            "subject_lines",
+            "opening_lines",
+            "call_to_action",
+            "message_length",
+            "personalization_depth"
+        ],
+        "methodology": {
+            "splitRatio": "50/50",
+            "minimumSample": 100,
+            "confidenceLevel": 0.95
+        },
+        "optimization": {
+            "automatic": true,
+            "learningRate": 0.1,
+            "updateFrequency": "daily"
+        }
+    },
+    "templates": {
+        "storage": "database",
+        "versioning": true,
+        "categories": [
+            "developer_senior",
+            "developer_junior",
+            "data_scientist",
+            "product_manager",
+            "designer",
+            "devops"
+        ],
+        "customization": {
+            "companySize": [
+                "startup",
+                "scaleup",
+                "enterprise"
+            ],
+            "industry": [
+                "fintech",
+                "healthtech",
+                "cyber",
+                "ai_ml",
+                "web3"
+            ],
+            "stage": [
+                "seed",
+                "series_a",
+                "series_b",
+                "growth",
+                "public"
+            ]
+        }
+    },
+    "quality": {
+        "checks": [
+            "grammar",
+            "spelling",
+            "tone_consistency",
+            "personalization_accuracy",
+            "cultural_appropriateness"
+        ],
+        "scoring": {
+            "readability": "flesch_kincaid",
+            "engagement": "predicted_response_rate",
+            "personalization": "relevance_score"
+        }
+    },
+    "integration": {
+        "inputs": {
+            "profileAnalyzer": "personality_insights",
+            "cultureMatcher": "company_culture",
+            "idealProfiler": "match_score"
+        },
+        "outputs": {
+            "format": "rich_text",
+            "channels": [
+                "linkedin",
+                "email",
+                "whatsapp"
+            ],
+            "tracking": "utm_parameters"
+        }
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/message-crafter",
+        "websocket": "/ws/message-crafter",
+        "preview": "/preview/message"
+    },
+    "performance": {
+        "caching": true,
+        "batchProcessing": true,
+        "maxConcurrent": 50
+    }
+}

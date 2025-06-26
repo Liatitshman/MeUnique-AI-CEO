@@ -1,0 +1,212 @@
+{
+    "name": "CMO Agent",
+    "emoji": "📣",
+    "version": "1.0.0",
+    "description": "Marketing strategist - optimizes messaging, branding, and conversion rates",
+    "priority": 11,
+    "type": "management",
+    "role": "marketing_director",
+    "authority": "high",
+    "capabilities": [
+        "message_optimization",
+        "brand_management",
+        "conversion_tracking",
+        "a_b_testing",
+        "market_analysis",
+        "campaign_management"
+    ],
+    "marketingStrategy": {
+        "messaging": {
+            "personalization": {
+                "levels": [
+                    "basic",
+                    "advanced",
+                    "hyper"
+                ],
+                "factors": [
+                    "industry",
+                    "role",
+                    "company_size",
+                    "cultural_fit",
+                    "technical_stack"
+                ]
+            },
+            "optimization": {
+                "metrics": [
+                    "open_rate",
+                    "response_rate",
+                    "conversion_rate",
+                    "time_to_response"
+                ],
+                "targets": {
+                    "openRate": "> 65%",
+                    "responseRate": "> 45%",
+                    "conversionRate": "> 25%"
+                }
+            }
+        },
+        "channels": {
+            "primary": [
+                "LinkedIn",
+                "Email",
+                "WhatsApp"
+            ],
+            "secondary": [
+                "GitHub",
+                "Twitter",
+                "Discord"
+            ],
+            "experimental": [
+                "Slack",
+                "Telegram",
+                "SMS"
+            ]
+        },
+        "campaigns": {
+            "types": [
+                "direct_outreach",
+                "content_marketing",
+                "referral_programs",
+                "event_based"
+            ],
+            "automation": {
+                "sequences": true,
+                "triggers": [
+                    "profile_view",
+                    "job_change",
+                    "funding_news"
+                ],
+                "followUp": "intelligent"
+            }
+        }
+    },
+    "analytics": {
+        "tracking": {
+            "userJourney": [
+                "first_contact",
+                "engagement",
+                "interview",
+                "offer",
+                "placement"
+            ],
+            "attribution": {
+                "model": "multi_touch",
+                "windows": {
+                    "first": 7,
+                    "last": 30
+                }
+            }
+        },
+        "reporting": {
+            "dashboards": [
+                "campaign_performance",
+                "channel_effectiveness",
+                "message_analytics",
+                "roi_tracking"
+            ],
+            "frequency": {
+                "realTime": [
+                    "response_rates",
+                    "conversions"
+                ],
+                "daily": [
+                    "campaign_metrics",
+                    "channel_performance"
+                ],
+                "weekly": [
+                    "trend_analysis",
+                    "optimization_opportunities"
+                ]
+            }
+        }
+    },
+    "contentStrategy": {
+        "templates": {
+            "languages": [
+                "he",
+                "en"
+            ],
+            "tones": [
+                "professional",
+                "casual",
+                "technical",
+                "friendly"
+            ],
+            "lengths": [
+                "short",
+                "medium",
+                "detailed"
+            ]
+        },
+        "testing": {
+            "methodology": "multivariate",
+            "sampleSize": "statistical_significance",
+            "duration": "2_weeks_minimum"
+        },
+        "localization": {
+            "hebrew": {
+                "culturalAdaptation": true,
+                "idioms": "local",
+                "formality": "adjusted"
+            },
+            "english": {
+                "variants": [
+                    "US",
+                    "UK",
+                    "International"
+                ],
+                "techSpeak": "industry_specific"
+            }
+        }
+    },
+    "brandGuidelines": {
+        "voice": {
+            "personality": [
+                "innovative",
+                "reliable",
+                "human",
+                "efficient"
+            ],
+            "values": [
+                "transparency",
+                "excellence",
+                "personalization",
+                "results"
+            ]
+        },
+        "visual": {
+            "colors": {
+                "primary": "#1E40AF",
+                "secondary": "#10B981",
+                "accent": "#F59E0B"
+            },
+            "typography": {
+                "hebrew": "Heebo",
+                "english": "Inter"
+            }
+        }
+    },
+    "endpoints": {
+        "api": "/api/ai/smart/cmo",
+        "websocket": "/ws/cmo",
+        "dashboard": "/dashboard/marketing",
+        "analytics": "/analytics/marketing"
+    },
+    "integrations": {
+        "marketing": [
+            "HubSpot",
+            "Mailchimp",
+            "SendGrid"
+        ],
+        "analytics": [
+            "Google Analytics",
+            "Mixpanel",
+            "Amplitude"
+        ],
+        "social": [
+            "LinkedIn API",
+            "Twitter API",
+            "Meta Business"
+        ]
+    }
+}
