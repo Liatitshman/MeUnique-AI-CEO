@@ -156,8 +156,8 @@ function generateAlternativeKeywords(profile: any): string[] {
     'TypeScript': ['JavaScript', 'ES6+']
   };
 
-  return profile.technical.mustHave.flatMap(skill =>
-    alternatives[skill] || []
+  return profile.technical.mustHave.flatMap((skill: string) =>
+    alternatives[skill as keyof typeof alternatives] || []
   );
 }
 

@@ -32,7 +32,7 @@ interface AgentCapability {
 }
 
 // Agent Registry
-const AGENT_REGISTRY = {
+const AGENT_REGISTRY: Record<string, any> = {
   'smart-database': {
     id: 'smart-database',
     name: 'Smart Database',
@@ -127,8 +127,8 @@ export class AgentCommunicationBus extends EventEmitter {
   private initializeAgents() {
     // Set up listeners for each agent
     Object.keys(AGENT_REGISTRY).forEach(agentId => {
-      this.on(`${agentId}:request`, (message: AgentMessage) => {
-        this.handleAgentRequest(message);
+      this.on(`${agentId}:request`, async (message: AgentMessage) => {
+        await this.processMessage(message);
       });
     });
 
@@ -177,7 +177,7 @@ export class AgentCommunicationBus extends EventEmitter {
 
   // Smart routing based on task
   getOptimalRoute(task: string): string[] {
-    const routes = {
+    const routes: Record<string, string[]> = {
       'new-job-posting': [
         'smart-database',
         'auto-recruiter',
@@ -214,14 +214,14 @@ export class AgentCommunicationBus extends EventEmitter {
     const agent = AGENT_REGISTRY[message.from];
     if (!agent) return;
 
-    const costMap = {
+    const costMap: Record<string, number> = {
       'free': 0,
       'low': 0.01,
       'medium': 0.10,
       'high': 1.00
     };
 
-    const cost = costMap[agent.cost] || 0;
+    const cost = costMap[agent.cost as keyof typeof costMap] || 0;
     const currentCost = this.costTracker.get(message.from) || 0;
     this.costTracker.set(message.from, currentCost + cost);
 
@@ -311,9 +311,9 @@ export class AgentCommunicationBus extends EventEmitter {
 
     // Find agents with similar capabilities
     return Object.entries(AGENT_REGISTRY)
-      .filter(([id, a]) => 
-        id !== agentId && 
-        a.capabilities.some(cap => agent.capabilities.includes(cap))
+      .filter(([id, a]) =>
+        id !== agentId &&
+        a.capabilities.some((cap: string) => agent.capabilities.includes(cap))
       )
       .map(([id]) => id);
   }
@@ -361,6 +361,12 @@ export class AgentCommunicationBus extends EventEmitter {
 // Export singleton instance
 export const agentBus = new AgentCommunicationBus();
 
+// Backward compatibility alias
+export const eventBus = agentBus;
+
+// Export class for type compatibility
+export const EventBus = AgentCommunicationBus;
+
 // Helper functions for common communication patterns
 export const agentHelpers = {
   // Request help from the system
@@ -392,7 +398,7 @@ export const agentHelpers = {
   // Cost-optimized routing
   routeWithCostOptimization: async (task: string, data: any) => {
     const route = agentBus.getOptimalRoute(task);
-    
+
     // Check with CFO first
     await agentBus.sendMessage({
       from: 'system',

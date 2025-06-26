@@ -2,13 +2,13 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Search, 
-  Users, 
-  Brain, 
-  MessageSquare, 
-  BookOpen, 
-  UserCheck, 
+import {
+  Search,
+  Users,
+  Brain,
+  MessageSquare,
+  BookOpen,
+  UserCheck,
   Target,
   Sparkles,
   Database,
@@ -126,14 +126,16 @@ const tools = [
 ];
 
 export default function UnifiedDashboard() {
-  const [selectedTool, setSelectedTool] = useState(null);
+  const [selectedTool, setSelectedTool] = useState<typeof tools[0] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleToolClick = (tool) => {
+  const handleToolClick = (tool: typeof tools[0]) => {
     setSelectedTool(tool);
   };
 
-  const handleToolAction = async (action) => {
+  const handleToolAction = async (action: string) => {
+    if (!selectedTool) return;
+
     setIsLoading(true);
     try {
       const response = await fetch(selectedTool.apiEndpoint, {
@@ -154,7 +156,7 @@ export default function UnifiedDashboard() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"

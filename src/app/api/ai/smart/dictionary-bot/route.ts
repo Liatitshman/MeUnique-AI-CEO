@@ -13,14 +13,14 @@ export async function POST(request: NextRequest) {
       "10x Developer": "מפתח שעושה 10 באגים במקום אחד",
       "Full Stack Developer": "מישהו שלא מומחה בכלום",
       "DevOps Engineer": "האשם בכל דבר שלא עובד",
-      
+
       // דרישות מצחיקות
       "Passionate": "מוכן לעבוד שעות נוספות בחינם",
       "Self starter": "לא נכשיר אותך",
       "Team player": "תיקח את האשמה כשמשהו נכשל",
       "Flexible": "תעבוד בסופ״ש",
       "Fast-paced": "אין לנו תהליכים",
-      
+
       // טכנולוגיות
       "AI/ML": "אקסל עם פונקציות מתקדמות",
       "Big Data": "יותר מ-Excel יכול להחזיק",
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
       data: {
         dictionary: techDictionary,
         memes: recruiterMemes,
-        translation: params?.term ? techDictionary[params.term] || "Term not found" : null,
+        translation: params?.term ? techDictionary[params.term as keyof typeof techDictionary] || "Term not found" : null,
         categories: ['Tech Roles', 'Job Requirements', 'Technologies', 'Recruiter Life'],
         languages: ['Hebrew', 'English', 'Sarcasm'],
         stats: {
