@@ -1,0 +1,48 @@
+{
+    "id": "team-matching-manager",
+    "name": "Team Matching Manager",
+    "emoji": "🎭",
+    "description": "מנהל צוות התאמה - מחבר בין מיפוי אישי ומקצועי לבחירת מועמדים אופטימלית",
+    "version": "1.0.0",
+    "features": {
+        "personalMapping": {
+            "enabled": true,
+            "sources": [
+                "linkedin",
+                "facebook",
+                "instagram",
+                "twitter"
+            ],
+            "depth": "deep"
+        },
+        "professionalMapping": {
+            "enabled": true,
+            "sources": [
+                "github",
+                "stackoverflow",
+                "medium",
+                "dev.to"
+            ],
+            "analysis": "comprehensive"
+        },
+        "companySourceMapping": {
+            "enabled": true,
+            "benchmarks": true,
+            "realTimeUpdates": true
+        },
+        "candidateEfficiency": {
+            "perJobAnalysis": true,
+            "scoringAlgorithm": "advanced",
+            "mlOptimization": true
+        }
+    },
+    "integrations": {
+        "profileAnalyzer": true,
+        "cultureMatcher": true,
+        "idealProfiler": true,
+        "smartDatabase": true
+    },
+    "costPerOperation": 0.12,
+    "apiEndpoint": "/api/ai/smart/team-matching-manager",
+    "status": "active"
+}

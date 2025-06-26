@@ -1,0 +1,421 @@
+/* MeUnique LinkedIn Assistant Styles */
+
+/* כפתורי פעולה */
+.meunique-button-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.meunique-button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.meunique-add {
+    background: #0073b1;
+    color: white;
+}
+
+.meunique-add:hover {
+    background: #005885;
+    transform: translateY(-1px);
+}
+
+.meunique-analyze {
+    background: #f3f2ef;
+    color: #0073b1;
+    border: 1px solid #0073b1;
+}
+
+.meunique-analyze:hover {
+    background: #e8f3f8;
+}
+
+.meunique-message {
+    background: #057642;
+    color: white;
+}
+
+.meunique-message:hover {
+    background: #045a32;
+}
+
+/* פאנל צף */
+#meunique-floating-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+#meunique-floating-panel.minimized {
+    height: 48px;
+    overflow: hidden;
+}
+
+.meunique-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: #0073b1;
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.meunique-panel-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.meunique-counter {
+    background: white;
+    color: #0073b1;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.meunique-minimize {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+.meunique-panel-content {
+    padding: 16px;
+}
+
+.meunique-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 12px;
+    background: #f3f2ef;
+    border-radius: 8px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0073b1;
+}
+
+.meunique-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.meunique-action-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #0073b1;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.meunique-action-btn:hover {
+    background: #005885;
+    transform: translateY(-1px);
+}
+
+/* פופאפים */
+.meunique-popup,
+.meunique-message-editor,
+.meunique-suggestions-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    max-width: 500px;
+    width: 90%;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.meunique-popup-content,
+.editor-content,
+.suggestions-content {
+    padding: 24px;
+}
+
+.meunique-popup h3,
+.editor-content h3,
+.suggestions-content h3 {
+    margin: 0 0 20px 0;
+    color: #0073b1;
+    font-size: 20px;
+}
+
+.analysis-section {
+    margin-bottom: 20px;
+}
+
+.analysis-section h4 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.match-score {
+    font-size: 48px;
+    font-weight: bold;
+    color: #057642;
+    text-align: center;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    padding: 4px 12px;
+    background: #e8f3f8;
+    color: #0073b1;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* עורך הודעות */
+.message-options {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.message-options label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.message-text {
+    width: 100%;
+    min-height: 200px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    resize: vertical;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.message-stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0 16px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.editor-actions button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-message {
+    background: #0073b1;
+    color: white;
+}
+
+.regenerate-message {
+    background: #f3f2ef;
+    color: #0073b1;
+    border: 1px solid #0073b1;
+}
+
+.close-editor,
+.meunique-close-popup,
+.close-suggestions {
+    background: #666;
+    color: white;
+}
+
+/* התראות */
+.meunique-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    background: #333;
+    color: white;
+    border-radius: 24px;
+    font-size: 14px;
+    z-index: 10001;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.meunique-notification.fade-out {
+    animation: fadeOut 0.3s ease;
+    opacity: 0;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+/* המלצות AI */
+.suggestion-item {
+    padding: 16px;
+    background: #f3f2ef;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.suggestion-item h4 {
+    margin: 0 0 8px 0;
+    color: #0073b1;
+    font-size: 16px;
+}
+
+.suggestion-item p {
+    margin: 0 0 12px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.apply-suggestion {
+    padding: 8px 16px;
+    background: #0073b1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.apply-suggestion:hover {
+    background: #005885;
+}
+
+/* סימון מועמדים שנוספו */
+.meunique-added {
+    position: relative;
+}
+
+.meunique-added::after {
+    content: '✓';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: #057642;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* התאמה למצב כהה של LinkedIn */
+@media (prefers-color-scheme: dark) {
+
+    #meunique-floating-panel,
+    .meunique-popup,
+    .meunique-message-editor,
+    .meunique-suggestions-popup {
+        background: #1d2226;
+        color: #f3f2ef;
+    }
+
+    .stat-item,
+    .suggestion-item {
+        background: #38434f;
+    }
+
+    .meunique-analyze,
+    .regenerate-message {
+        background: #38434f;
+        color: #70b5f9;
+        border-color: #70b5f9;
+    }
+
+    .message-text {
+        background: #38434f;
+        border-color: #5e6570;
+        color: #f3f2ef;
+    }
+}

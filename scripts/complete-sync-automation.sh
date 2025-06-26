@@ -69,4 +69,100 @@ echo -e "${YELLOW}📄 Report saved to: 👑_CEO-System/📁_Documents/deploymen
 echo -e "${YELLOW}💻 Opening GitHub Desktop...${NC}"
 open -a "GitHub Desktop" 2>/dev/null || echo "GitHub Desktop not found"
 
-echo -e "${GREEN}🎉 All tasks completed successfully!${NC}" 
+echo -e "${GREEN}🎉 All tasks completed successfully!${NC}"
+
+# ייבוא קשרים
+python3 scripts/linkedin-connections-importer.py
+
+# מיפוי חברות
+python3 scripts/company-employees-mapper.py
+
+# הרחבת רשת חכמה
+python3 scripts/smart-linkedin-network-expander.py
+
+# מקבל מידע מ:
+- Discord scraping results
+- LinkedIn connections import
+- Sales QL enrichment
+- GitHub API results
+
+# מעבד:
+- דה-דופליקציה
+- נרמול נתונים
+- יצירת ID ייחודי
+- שמירה בפורמט אחיד
+
+# מספק ל:
+- כל הסוכנים האחרים
+
+# שואב מידע מ:
+- Smart Database (מועמדים קיימים)
+- LinkedIn Sales Navigator (חיפושים חדשים)
+- Discord servers (קהילות טכניות)
+- GitHub API (מפתחים פעילים)
+
+# מחפש:
+- מועמדים חדשים לפי קריטריונים
+- patterns של הצלחה
+- רשתות חברתיות
+
+# מוסיף:
+- 300+ פרופילים חדשים ביום
+
+# מקבל:
+- פרופילים גולמיים מ-Talent Sourcer
+
+# מעשיר באמצעות:
+- Sales QL (אימיילים)
+- GitHub (פרויקטים)
+- Twitter (פעילות)
+- Company research
+
+# מוסיף:
+- ניקוד טכני
+- ניקוד זמינות
+- skills מזוהים
+
+# לומד מ:
+- הודעות מוצלחות (45%+ response)
+- משוב ממועמדים
+- טרנדים בשוק
+
+# מתעדכן עם:
+- ביטויים חדשים
+- buzzwords לפי תחום
+- סלנג ישראלי טכנולוגי
+
+# מחקר ברשת:
+- חיפוש benchmarks לשכר
+- טרנדים טכנולוגיים
+- חדשות על חברות 
+
+const smartBookmarks = {
+  // לפי חברה
+  byCompany: {
+    "Wiz": {
+      news: ["Latest funding", "New products"],
+      employees: ["Key hires", "Team growth"],
+      techStack: ["Technologies used"],
+      culture: ["Company values", "Work style"]
+    }
+  },
+  
+  // לפי מועמד
+  byCandidate: {
+    "David Cohen": {
+      projects: ["GitHub repos", "Blog posts"],
+      activity: ["Recent LinkedIn posts"],
+      connections: ["Mutual contacts"],
+      interests: ["Conference talks", "Tech interests"]
+    }
+  },
+  
+  // לפי מקורות
+  bySources: {
+    "Discord": ["Active servers", "Hot discussions"],
+    "GitHub": ["Trending repos", "Active contributors"],
+    "Communities": ["New groups", "Events"]
+  }
+} 

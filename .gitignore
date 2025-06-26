@@ -150,4 +150,9 @@ Liatitshman-MeUnique.AI/
 /🎯_MeUnique-Business-FINAL
 **/🎯_MeUnique-Business-FINAL
 **/Liatitshman*
-**/*MeUnique.AI* 
+**/*MeUnique.AI*
+
+# Prevent self-referencing loops
+MeUnique-AI-CEO/
+/MeUnique-AI-CEO/
+**/MeUnique-AI-CEO/ 
