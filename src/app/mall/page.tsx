@@ -12,6 +12,7 @@ import {
     Palette, FileText, UserCheck, Bot, Cpu, Layers
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import FloatingBots from '@/components/FloatingBots';
 
 // Vibrant engaging color palette
 const vibrantPalette = {
@@ -223,8 +224,8 @@ const stores = [
     }
 ];
 
-// Interactive Store Component
-const InteractiveStore = ({ store, onAddToCart, onViewDetails }) => {
+// Interactive Store Component with improved responsiveness
+const InteractiveStore = ({ store, onAddToCart, onViewDetails, onAddToWishlist, isInWishlist }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [showCapabilities, setShowCapabilities] = useState(false);
@@ -237,7 +238,7 @@ const InteractiveStore = ({ store, onAddToCart, onViewDetails }) => {
             whileHover={{ y: -5 }}
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
-            className="relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer transform transition-all duration-300"
+            className="relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer transform transition-all duration-300 w-full"
             style={{
                 background: colors.gradient || `linear-gradient(135deg, ${colors.light} 0%, ${colors.main} 100%)`,
                 border: `2px solid ${colors.main}`,
@@ -246,44 +247,91 @@ const InteractiveStore = ({ store, onAddToCart, onViewDetails }) => {
             onClick={() => onViewDetails(store)}
         >
             {/* Store Header */}
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                         <motion.div
                             animate={{ rotate: isHovered ? 360 : 0 }}
                             transition={{ duration: 0.5 }}
-                            className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                             style={{ backgroundColor: colors.dark }}
                         >
-                            <store.icon className="w-7 h-7 text-white" />
+                            <store.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                         </motion.div>
-                        <div>
-                            <h3 className="text-xl font-bold text-gray-800">{store.name}</h3>
-                            <p className="text-sm text-gray-600">{store.tagline}</p>
+                        <div className="min-w-0">
+                            <h3 className="text-lg sm:text-xl font-bold text-gray-800 truncate">{store.name}</h3>
+                            <p className="text-xs sm:text-sm text-gray-600">{store.tagline}</p>
                         </div>
                     </div>
-                    <motion.div
-                        animate={{ scale: isHovered ? 1.1 : 1 }}
-                        className="px-3 py-1 rounded-full text-xs font-medium"
-                        style={{ backgroundColor: colors.main, color: colors.dark }}
-                    >
-                        Floor {store.floor}
-                    </motion.div>
+                    <div className="flex flex-col gap-2">
+                        <motion.div
+                            animate={{ scale: isHovered ? 1.1 : 1 }}
+                            className="px-2 py-1 rounded-full text-xs font-medium"
+                            style={{ backgroundColor: colors.main, color: 'white' }}
+                        >
+                            Floor {store.floor}
+                        </motion.div>
+                        <motion.button
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onAddToWishlist(store);
+                            }}
+                            className="p-1.5 rounded-full bg-white/80 backdrop-blur"
+                        >
+                            <Heart
+                                className={`w-4 h-4 transition-colors ${isInWishlist ? 'fill-red-500 text-red-500' : 'text-gray-600'
+                                    }`}
+                            />
+                        </motion.button>
+                    </div>
                 </div>
 
                 {/* Background Info */}
-                <p className="text-sm text-gray-700 mb-4 line-clamp-2">
+                <p className="text-xs sm:text-sm text-gray-700 mb-4 line-clamp-2">
                     {store.background}
                 </p>
 
-                {/* Quick Stats */}
-                <div className="grid grid-cols-3 gap-2 mb-4">
-                    {Object.entries(store.stats).map(([key, value]) => (
-                        <div key={key} className="text-center p-2 rounded-lg" style={{ backgroundColor: colors.light }}>
-                            <div className="text-xs text-gray-600">{key}</div>
-                            <div className="text-sm font-bold" style={{ color: colors.dark }}>{value}</div>
+                {/* Quick Stats - Responsive Grid */}
+                <div className="grid grid-cols-3 gap-1 sm:gap-2 mb-4">
+                    {Object.entries(store.stats).slice(0, 3).map(([key, value]) => (
+                        <div key={key} className="text-center p-1.5 sm:p-2 rounded-lg" style={{ backgroundColor: colors.light }}>
+                            <div className="text-xs text-gray-600 truncate">{key}</div>
+                            <div className="text-xs sm:text-sm font-bold" style={{ color: colors.dark }}>{value}</div>
                         </div>
                     ))}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-2">
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onAddToCart(store.products[0], store);
+                        }}
+                        className="flex-1 py-2 rounded-lg text-xs sm:text-sm font-medium text-white transition-colors"
+                        style={{ backgroundColor: colors.dark }}
+                    >
+                        הוסף לעגלה
+                    </motion.button>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onViewDetails(store);
+                        }}
+                        className="flex-1 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors"
+                        style={{
+                            backgroundColor: colors.light,
+                            color: colors.dark
+                        }}
+                    >
+                        פרטים מלאים
+                    </motion.button>
                 </div>
 
                 {/* Capabilities Toggle */}
@@ -345,19 +393,6 @@ const InteractiveStore = ({ store, onAddToCart, onViewDetails }) => {
                     )}
                 </AnimatePresence>
             </div>
-
-            {/* Quick Action Bar */}
-            <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: isHovered ? 0 : 100 }}
-                className="absolute bottom-0 left-0 right-0 p-4"
-                style={{ backgroundColor: colors.dark }}
-            >
-                <button className="w-full py-2 bg-white rounded-lg text-sm font-medium"
-                    style={{ color: colors.dark }}>
-                    View Details & Products
-                </button>
-            </motion.div>
         </motion.div>
     );
 };
@@ -548,116 +583,159 @@ export default function DigitalMall() {
         addNotification(`Opening ${store.name} in new tab!`, 'info');
     };
 
+    const toggleWishlist = (store) => {
+        if (isInWishlist(store.id)) {
+            setWishlist(prev => prev.filter(s => s.id !== store.id));
+            addNotification(`Removed ${store.name} from wishlist!`, 'success');
+        } else {
+            setWishlist(prev => [...prev, store]);
+            addNotification(`Added ${store.name} to wishlist!`, 'success');
+        }
+    };
+
+    const isInWishlist = (id) => {
+        return wishlist.some(store => store.id === id);
+    };
+
     return (
         <div className="min-h-screen" style={{ backgroundColor: vibrantPalette.neutral.light }}>
-            {/* Header */}
+            <FloatingBots />
+
+            {/* Header - Responsive */}
             <header className="bg-white shadow-sm sticky top-0 z-40">
-                <div className="container mx-auto px-4 py-4">
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex items-center justify-between h-14 sm:h-16">
+                        <div className="flex items-center gap-2 sm:gap-4">
                             <motion.div
                                 animate={{ rotate: [0, 360] }}
                                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
-                                className="w-12 h-12 rounded-xl flex items-center justify-center"
+                                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center"
                                 style={{ background: vibrantPalette.primary.gradient }}
                             >
-                                <Crown className="w-6 h-6 text-white" />
+                                <Crown className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </motion.div>
                             <div>
-                                <h1 className="text-2xl font-bold text-gray-800">MeUnique Mall</h1>
-                                <p className="text-sm text-gray-600">AI-Powered Recruitment Marketplace</p>
+                                <h1 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                                    MeUnique Mall
+                                </h1>
+                                <p className="text-xs sm:text-sm text-gray-600 hidden sm:block">
+                                    {filteredStores.length} AI Agents Available
+                                </p>
                             </div>
                         </div>
-
-                        {/* Cart Button */}
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => setShowCart(!showCart)}
-                            className="relative p-3 rounded-xl"
-                            style={{ backgroundColor: vibrantPalette.accent.light }}
-                        >
-                            <ShoppingCart className="w-6 h-6" style={{ color: vibrantPalette.accent.dark }} />
-                            <AnimatePresence>
-                                {cart.length > 0 && (
+                        <div className="flex items-center gap-2 sm:gap-4">
+                            {/* Wishlist Button */}
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="relative p-2 sm:p-3 rounded-xl bg-pink-100"
+                            >
+                                <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-pink-600" />
+                                {wishlist.length > 0 && (
                                     <motion.span
                                         initial={{ scale: 0 }}
                                         animate={{ scale: 1 }}
-                                        exit={{ scale: 0 }}
-                                        className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                                        style={{ backgroundColor: vibrantPalette.secondary.dark }}
+                                        className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-pink-500 text-white flex items-center justify-center text-xs font-bold"
                                     >
-                                        {cart.length}
+                                        {wishlist.length}
                                     </motion.span>
                                 )}
-                            </AnimatePresence>
-                        </motion.button>
+                            </motion.button>
 
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => window.open('/admin', '_blank')}
-                            className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium"
-                        >
-                            Admin Mode
-                        </motion.button>
+                            {/* Cart Button */}
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => router.push('/cart')}
+                                className="relative p-2 sm:p-3 rounded-xl"
+                                style={{ backgroundColor: vibrantPalette.accent.light }}
+                            >
+                                <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: vibrantPalette.accent.dark }} />
+                                <AnimatePresence>
+                                    {cart.length > 0 && (
+                                        <motion.span
+                                            initial={{ scale: 0 }}
+                                            animate={{ scale: 1 }}
+                                            exit={{ scale: 0 }}
+                                            className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                                            style={{ backgroundColor: vibrantPalette.secondary.dark }}
+                                        >
+                                            {cart.length}
+                                        </motion.span>
+                                    )}
+                                </AnimatePresence>
+                            </motion.button>
+
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => window.open('/admin', '_blank')}
+                                className="hidden sm:flex px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium text-sm"
+                            >
+                                Admin Mode
+                            </motion.button>
+                        </div>
                     </div>
                 </div>
             </header>
 
-            {/* Search & Filters */}
-            <div className="container mx-auto px-4 py-6">
-                <div className="flex flex-col md:flex-row gap-4">
-                    {/* Search */}
-                    <div className="flex-1 relative">
+            {/* Main Content - Responsive Padding */}
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+                {/* Search Bar - Responsive */}
+                <div className="mb-6 sm:mb-8">
+                    <div className="relative max-w-xl mx-auto">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                         <input
                             type="text"
-                            placeholder="Search agents..."
+                            placeholder="חפש סוכן AI..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl border-2 focus:outline-none transition-colors"
+                            className="w-full pl-10 pr-4 py-2 sm:py-3 rounded-xl border-2 focus:outline-none transition-colors text-sm sm:text-base"
                             style={{
                                 borderColor: vibrantPalette.primary.light,
                                 backgroundColor: 'white'
                             }}
                         />
                     </div>
-
-                    {/* Category Filter */}
-                    <select
-                        value={selectedCategory}
-                        onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="px-4 py-3 rounded-xl border-2 focus:outline-none"
-                        style={{ borderColor: vibrantPalette.secondary.light }}
-                    >
-                        {categories.map(cat => (
-                            <option key={cat} value={cat}>
-                                {cat.charAt(0).toUpperCase() + cat.slice(1)}
-                            </option>
-                        ))}
-                    </select>
-
-                    {/* Floor Filter */}
-                    <select
-                        value={selectedFloor}
-                        onChange={(e) => setSelectedFloor(e.target.value)}
-                        className="px-4 py-3 rounded-xl border-2 focus:outline-none"
-                        style={{ borderColor: vibrantPalette.accent.light }}
-                    >
-                        <option value="all">All Floors</option>
-                        <option value="1">Floor 1</option>
-                        <option value="2">Floor 2</option>
-                        <option value="3">Floor 3</option>
-                    </select>
                 </div>
-            </div>
 
-            {/* Stores Grid */}
-            <div className="container mx-auto px-4 pb-8">
+                {/* Filters - Responsive */}
+                <div className="flex flex-col sm:flex-row gap-4 mb-6 sm:mb-8">
+                    <div className="flex-1">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">קטגוריה</label>
+                        <select
+                            value={selectedCategory}
+                            onChange={(e) => setSelectedCategory(e.target.value)}
+                            className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border-2 focus:outline-none text-sm sm:text-base"
+                            style={{ borderColor: vibrantPalette.secondary.light }}
+                        >
+                            {categories.map(cat => (
+                                <option key={cat} value={cat}>
+                                    {cat === 'all' ? 'All Categories' : cat}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className="flex-1">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">קומה</label>
+                        <select
+                            value={selectedFloor}
+                            onChange={(e) => setSelectedFloor(e.target.value)}
+                            className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border-2 focus:outline-none text-sm sm:text-base"
+                            style={{ borderColor: vibrantPalette.accent.light }}
+                        >
+                            <option value="all">All Floors</option>
+                            {[1, 2, 3].map(floor => (
+                                <option key={floor} value={floor.toString()}>Floor {floor}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+
+                {/* Stores Grid - Responsive */}
                 <motion.div
                     layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
                 >
                     {filteredStores.map((store, index) => (
                         <InteractiveStore
@@ -665,89 +743,91 @@ export default function DigitalMall() {
                             store={store}
                             onAddToCart={addToCart}
                             onViewDetails={handleViewStore}
+                            onAddToWishlist={toggleWishlist}
+                            isInWishlist={isInWishlist(store.id)}
                         />
                     ))}
                 </motion.div>
-            </div>
 
-            {/* Store Modal */}
-            <StoreModal
-                store={selectedStore}
-                isOpen={!!selectedStore}
-                onClose={() => setSelectedStore(null)}
-                onAddToCart={addToCart}
-            />
+                {/* Store Modal */}
+                <StoreModal
+                    store={selectedStore}
+                    isOpen={!!selectedStore}
+                    onClose={() => setSelectedStore(null)}
+                    onAddToCart={addToCart}
+                />
 
-            {/* Cart Sidebar */}
-            <AnimatePresence>
-                {showCart && (
-                    <motion.div
-                        initial={{ x: '100%' }}
-                        animate={{ x: 0 }}
-                        exit={{ x: '100%' }}
-                        className="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl z-50 overflow-y-auto"
-                    >
-                        <div className="p-6">
-                            <div className="flex items-center justify-between mb-6">
-                                <h2 className="text-xl font-bold">Your Cart</h2>
-                                <button
-                                    onClick={() => setShowCart(false)}
-                                    className="p-2 rounded-lg hover:bg-gray-100"
-                                >
-                                    <X className="w-5 h-5" />
-                                </button>
-                            </div>
-
-                            {cart.length === 0 ? (
-                                <p className="text-gray-500 text-center py-8">Your cart is empty</p>
-                            ) : (
-                                <div className="space-y-4">
-                                    {cart.map((item) => (
-                                        <motion.div
-                                            key={item.id}
-                                            layout
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            className="p-4 rounded-xl"
-                                            style={{ backgroundColor: vibrantPalette.neutral.light }}
-                                        >
-                                            <div className="flex justify-between items-start">
-                                                <div>
-                                                    <h4 className="font-medium">{item.name}</h4>
-                                                    <p className="text-sm text-gray-600">{item.store}</p>
-                                                </div>
-                                                <span className="font-bold">{item.price}</span>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            {/* Notifications */}
-            <div className="fixed bottom-4 right-4 z-50 space-y-2">
+                {/* Cart Sidebar */}
                 <AnimatePresence>
-                    {notifications.map((notification) => (
+                    {showCart && (
                         <motion.div
-                            key={notification.id}
-                            initial={{ opacity: 0, x: 100 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: 100 }}
-                            className="px-4 py-3 rounded-lg shadow-lg text-white"
-                            style={{
-                                backgroundColor: notification.type === 'success'
-                                    ? vibrantPalette.accent.dark
-                                    : vibrantPalette.secondary.dark
-                            }}
+                            initial={{ x: '100%' }}
+                            animate={{ x: 0 }}
+                            exit={{ x: '100%' }}
+                            className="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl z-50 overflow-y-auto"
                         >
-                            {notification.message}
+                            <div className="p-6">
+                                <div className="flex items-center justify-between mb-6">
+                                    <h2 className="text-xl font-bold">Your Cart</h2>
+                                    <button
+                                        onClick={() => setShowCart(false)}
+                                        className="p-2 rounded-lg hover:bg-gray-100"
+                                    >
+                                        <X className="w-5 h-5" />
+                                    </button>
+                                </div>
+
+                                {cart.length === 0 ? (
+                                    <p className="text-gray-500 text-center py-8">Your cart is empty</p>
+                                ) : (
+                                    <div className="space-y-4">
+                                        {cart.map((item) => (
+                                            <motion.div
+                                                key={item.id}
+                                                layout
+                                                initial={{ opacity: 0, y: 20 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                className="p-4 rounded-xl"
+                                                style={{ backgroundColor: vibrantPalette.neutral.light }}
+                                            >
+                                                <div className="flex justify-between items-start">
+                                                    <div>
+                                                        <h4 className="font-medium">{item.name}</h4>
+                                                        <p className="text-sm text-gray-600">{item.store}</p>
+                                                    </div>
+                                                    <span className="font-bold">{item.price}</span>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </motion.div>
-                    ))}
+                    )}
                 </AnimatePresence>
-            </div>
+
+                {/* Notifications */}
+                <div className="fixed bottom-4 right-4 z-50 space-y-2">
+                    <AnimatePresence>
+                        {notifications.map((notification) => (
+                            <motion.div
+                                key={notification.id}
+                                initial={{ opacity: 0, x: 100 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: 100 }}
+                                className="px-4 py-3 rounded-lg shadow-lg text-white"
+                                style={{
+                                    backgroundColor: notification.type === 'success'
+                                        ? vibrantPalette.accent.dark
+                                        : vibrantPalette.secondary.dark
+                                }}
+                            >
+                                {notification.message}
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                </div>
+            </main>
         </div>
     );
 } 
